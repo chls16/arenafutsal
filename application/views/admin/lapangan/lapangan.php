@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Destination</title>
+	<title>lapangan</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -21,7 +21,7 @@
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">Destination</h3>
+								<h3 class="box-title">lapangan</h3>
 							</div>
 							<div class="box-body">
 								<table id="example1" class="table table-bordered table-striped">
@@ -36,15 +36,15 @@
 									</thead>
 									<tbody>
 										<?php $no = 1; ?>
-										<?php foreach ($destination as $data){?>
+										<?php foreach ($lapangan as $data){?>
 										<tr>
 											<td><?php  echo $no++; ?></td>
-											<td><?php echo $data->destination ?></td>
+											<td><?php echo $data->lapangan ?></td>
 											<td><?php echo $data->iso ?></td>
 											<td>Contoh</td>
 											<td>
-												<a type="button" href="<?php echo base_url('admin/destinations/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
-												<a type="button" href="<?php echo base_url('admin/destinations/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->destination ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>
+												<a type="button" href="<?php echo base_url('admin/lapangan/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
+												<a type="button" href="<?php echo base_url('admin/lapangan/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->lapangan ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>
 											</td>
 										</tr>
 										<?php } ?>

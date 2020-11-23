@@ -20,19 +20,19 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">Tambah Kota</h3>
 					</div>
-					<?php foreach ($destination as $data){?>
-					<form action="<?php echo base_url(). 'admin/destinations/update/'.$data->id; ?>" method="post" class="form-horizontal">
+					<?php foreach ($lapangan as $data){?>
+					<form action="<?php echo base_url(). 'admin/lapangan/update/'.$data->id; ?>" method="post" class="form-horizontal">
 						<div class="box-body">
 							<div class="form-group">
 								<label for="inputEmail3" class="col-sm-2 control-label">Nama Kota</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="destination" value="<?php echo $data->destination ?>">
+									<input type="text" class="form-control" name="lapangan" value="<?php echo $data->lapangan ?>">
 								</div>
 							</div>
 							<?php } ?>
 						</div>
 						<div class="box-footer">
-							<a href="<?php echo base_url(); ?>admin/destinations" class="btn btn-default">Batal</a>
+							<a href="<?php echo base_url(); ?>admin/lapangan" class="btn btn-default">Batal</a>
 							<button type="submit" class="btn btn-info pull-right" name="submit">Update</button>
 						</div>
 					</form>
@@ -41,9 +41,9 @@
 			<section class="content">
 				<div class="box box-info">
 					<div class="box-header with-border">
-						<h3 class="box-title">Destination</h3>
-						<?php foreach ($destination as $data){?>
-						<form action="<?php echo base_url(). 'admin/destinations/update/'.$data->id; ?>" method="post" class="form-horizontal">
+						<h3 class="box-title">lapangan</h3>
+						<?php foreach ($lapangan as $data){?>
+						<form action="<?php echo base_url(). 'admin/lapangan/update/'.$data->id; ?>" method="post" class="form-horizontal">
 					</div>
 						<div class="box-body">
 							<div class="form-group">
@@ -52,7 +52,7 @@
 									<div class="input-group-addon">
 										<i class="fa fa-plane"></i>
 									</div>
-									<input name="destination" type="text" class="form-control" placeholder="Pesawat" value="<?= $data->destination ?>" required/>
+									<input name="lapangan" type="text" class="form-control" placeholder="Pesawat" value="<?= $data->lapangan ?>" required/>
 								</div>
 							</div>
 							<div class="form-group">
