@@ -72,7 +72,7 @@ Class M_admin extends CI_Model
 	}
 
 	function tampil_lapangan(){
-		return $this->db->get('dlapangan')->result();
+		return $this->db->get('lapangan')->result();
 	}
 
 	function add_lapangan($data){

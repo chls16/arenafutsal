@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Create Destination</title>
+	<title>Tambah Lapangan</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -13,12 +13,12 @@
 		<div class="content-wrapper">
 			<section class="content-header">
 				<h1>Create Data</h1>
-				<form action="<?php echo base_url(). 'admin/destinations/add_destination'; ?>" method="post">
+				<form action="<?php echo base_url(). 'admin/lapangan/add_lapangan'; ?>" method="post">
 				</section>
 				<section class="content">
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">Destination</h3>
+							<h3 class="box-title">lapangan</h3>
 						</div>
 						<div class="box-body">
 							<div class="form-group">
@@ -28,7 +28,7 @@
 										<div class="input-group-addon">
 											<i class="fa fa-building"></i>
 										</div>
-										<input name="destination" type="text" class="form-control" required/>
+										<input name="lapangan" type="text" class="form-control" required/>
 									</div>
 									<label>Kode : </label>
 									<div class="input-group">
@@ -55,7 +55,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Create Destination</title>
+	<title>Create lapangan</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -69,14 +69,14 @@
 			<section class="content col col-md-6">
 				<div class="box box-info">
 					<div class="box-header with-border">
-						<h3 class="box-title">Destination</h3>
+						<h3 class="box-title">lapangan</h3>
 					</div>
-					<form action="<?php echo base_url(). 'admin/destinations/add_destination'; ?>" method="post" class="form-horizontal">
+					<form action="<?php echo base_url(). 'admin/lapangans/add_lapangan'; ?>" method="post" class="form-horizontal">
 						<div class="box-body">
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Nama Kota</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" name="destination" placeholder="Nama Kota">
+									<input type="text" class="form-control" name="lapangan" placeholder="Nama Kota">
 								</div>
 							</div>
 						</div>

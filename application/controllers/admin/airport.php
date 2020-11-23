@@ -17,20 +17,20 @@ class Airport extends CI_Controller {
 
 	function add()
 	{
-		$data['destination']=$this->m_admin->tampil_destination();
+		$data['lapangan']=$this->m_admin->tampil_lapangan();
 		$this->load->view('admin/airport/add',$data);
 	}
 
 	function add_airport()
 	{
 		$id = $this->input->post('id');
-		$id_destination = $this->input->post('id_destination');
+		$id_lapangan = $this->input->post('id_lapangan');
 		$name = $this->input->post('name');
 		$iso = $this->input->post('iso');
 
 		$data = array(
 			'id' => $id,
-			'id_destination' => $id_destination,
+			'id_lapangan' => $id_lapangan,
 			'name' => $name,
 			'iso' => $iso,
 		);
