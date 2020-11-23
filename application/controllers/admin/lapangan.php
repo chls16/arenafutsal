@@ -25,7 +25,7 @@ class Lapangan extends CI_Controller {
 	{
 		$id = $this->input->post('id');
 		$lapangan = $this->input->post('lapangan');
-		$iso = $this->input->post('iso');
+		$id_tarif = $this->input->post('id_tarif');
 
 		$data = array(
 			'id' => $id,

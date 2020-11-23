@@ -17,38 +17,14 @@
 					<div class="col-lg-3 col-xs-6">
 						<div class="small-box bg-aqua">
 							<div class="inner">
-								<h3><?=$cdestination[0]->jumlah ?>
+								<h3><?=$clapangan[0]->jumlah ?>
 								</h3>
 								<p>Kota</p>
 							</div>
 							<div class="icon">
 								<i class="fa fa-building"></i>
 							</div>
-							<a href="<?=base_url() ?>admin/destinations" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-xs-6">
-						<div class="small-box bg-green">
-							<div class="inner">
-								<h3><?=$cairport[0]->jumlah ?></h3>
-								<p>Bandara</p>
-							</div>
-							<div class="icon">
-								<i class="fa fa-building-o"></i>
-							</div>
-							<a href="<?=base_url() ?>admin/airport" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-xs-6">
-						<div class="small-box bg-yellow">
-							<div class="inner">
-								<h3><?=$ctransportation[0]->jumlah ?></h3>
-								<p>Maskapai</p>
-							</div>
-							<div class="icon">
-								<i class="fa fa-plane"></i>
-							</div>
-							<a href="<?=base_url() ?>admin/transportation" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+							<a href="<?=base_url() ?>admin/lapangan" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-xs-6">

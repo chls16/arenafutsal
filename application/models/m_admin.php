@@ -10,21 +10,16 @@ Class M_admin extends CI_Model
 		}
 	}
 
-	function cairport(){
-		return $this->db->query('SELECT COUNT(*) as jumlah FROM airport;')->result();
-	}
+	
 
 	function clapangan(){
-		return $this->db->query('SELECT COUNT(*) as jumlah FROM lapangan;')->result();
+		$query = $this->db->query('SELECT A.*,D.lapangan FROM lapangan A JOIN tarif D WHERE A.id='.$id.' AND D.id=A.id_lapangan');
+		return $query;
 	}
 
-	function ctransportation(){
-		return $this->db->query('SELECT COUNT(*) as jumlah FROM transportation;')->result();
-	}
+	
 
-	function crute(){
-		return $this->db->query('SELECT COUNT(*) as jumlah FROM rute;')->result();
-	}
+	
 
 	function tampil_user(){
 		return $this->db->get('users')->result();	

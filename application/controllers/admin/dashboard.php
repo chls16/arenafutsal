@@ -12,9 +12,8 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$data['clapangan']=$this->m_admin->clapangan();
-		$data['cairport']=$this->m_admin->cairport();
-		$data['ctransportation']=$this->m_admin->ctransportation();
-		$data['crute']=$this->m_admin->crute();
+		
+	
 		$data['lapangan']=$this->m_admin->tampil_lapangan();
 		$this->load->view('admin/dashboard',$data);
 	}

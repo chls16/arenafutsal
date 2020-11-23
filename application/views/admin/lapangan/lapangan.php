@@ -28,10 +28,9 @@
 									<thead>
 										<tr>
 											<th width="15%">No</th>
-											<th>Kota</th>
-											<th>Kode</th>
-											<th width="15%">Jumlah Bandara</th>
-											<th width="15%">Action</th>
+											<th>Nama Lapangan</th>
+											<th>Tarif</th>
+											
 										</tr>
 									</thead>
 									<tbody>
