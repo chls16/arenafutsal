@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 03:42 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.1.30
+-- Waktu pembuatan: 23 Nov 2020 pada 21.28
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,37 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `airport`
+-- Struktur dari tabel `booking`
 --
 
-CREATE TABLE `airport` (
-  `id` int(11) NOT NULL,
-  `id_destination` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `iso` varchar(10) NOT NULL
+CREATE TABLE `booking` (
+  `id` int(10) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `tanggal_booking` timestamp NOT NULL DEFAULT current_timestamp(),
+  `id_lapangan` int(11) NOT NULL,
+  `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `airport`
+-- Dumping data untuk tabel `booking`
 --
 
-INSERT INTO `airport` (`id`, `id_destination`, `name`, `iso`) VALUES
-(1, 2, 'Halim Perdana Kusuma', 'HLP'),
-(2, 2, 'Soekarno-Hatta', 'CGK'),
-(3, 1, 'Husein Sastranegara', 'BDO'),
-(4, 7, 'Achmad Yani', 'SRG'),
-(5, 3, 'Juanda Airport', 'SUB'),
-(6, 4, 'Adisumarmo Airport', 'SOC'),
-(7, 6, 'Adisucipto', 'JOG'),
-(8, 8, 'Sultan Iskandar Muda', 'BTJ'),
-(9, 10, 'Radint Inten II Airport', 'TKG'),
-(10, 5, 'Tunggul Wulung', 'CXP'),
-(11, 9, 'Fatmawati-Soekarno Airport', 'BKS');
+INSERT INTO `booking` (`id`, `id_user`, `tanggal_booking`, `id_lapangan`, `status`) VALUES
+(1, 1, '2018-02-28 01:50:54', 0, 0),
+(2, 2, '2018-02-28 01:50:54', 0, 0),
+(3, 3, '2018-02-28 02:10:04', 0, 0),
+(4, 4, '2018-02-28 02:52:27', 0, 0),
+(5, 5, '2018-02-28 02:52:27', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Struktur dari tabel `customer`
 --
 
 CREATE TABLE `customer` (
@@ -66,7 +60,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer`
+-- Dumping data untuk tabel `customer`
 --
 
 INSERT INTO `customer` (`id`, `id_users`, `name`, `noid`) VALUES
@@ -79,7 +73,7 @@ INSERT INTO `customer` (`id`, `id_users`, `name`, `noid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lapangan`
+-- Struktur dari tabel `lapangan`
 --
 
 CREATE TABLE `lapangan` (
@@ -88,7 +82,7 @@ CREATE TABLE `lapangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `lapangan`
+-- Dumping data untuk tabel `lapangan`
 --
 
 INSERT INTO `lapangan` (`id`, `lapangan`) VALUES
@@ -106,88 +100,31 @@ INSERT INTO `lapangan` (`id`, `lapangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservation`
+-- Struktur dari tabel `tarif`
 --
 
-CREATE TABLE `reservation` (
-  `id` int(10) NOT NULL,
-  `reservation_code` varchar(255) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `reservation_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `seat_code` varchar(10) NOT NULL,
-  `rute_id` int(11) NOT NULL,
-  `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `reservation`
---
-
-INSERT INTO `reservation` (`id`, `reservation_code`, `customer_id`, `reservation_date`, `seat_code`, `rute_id`, `status`) VALUES
-(1, 'TOM28021', 1, '2018-02-28 01:50:54', '015', 6, 0),
-(2, 'TOM28022', 2, '2018-02-28 01:50:54', '030', 6, 0),
-(3, 'TOM28023', 3, '2018-02-28 02:10:04', '014', 6, 0),
-(4, 'TOM28024', 4, '2018-02-28 02:52:27', '014', 5, 0),
-(5, 'TOM28025', 5, '2018-02-28 02:52:27', '015', 5, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rute`
---
-
-CREATE TABLE `rute` (
+CREATE TABLE `tarif` (
   `id` int(11) NOT NULL,
-  `depart_at` datetime NOT NULL,
-  `rute_from` varchar(50) NOT NULL,
-  `rute_to` varchar(50) NOT NULL,
-  `arrival` datetime NOT NULL,
-  `price` varchar(13) NOT NULL,
-  `id_transportation` varchar(13) NOT NULL,
-  `creat_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id_lapangan` int(11) NOT NULL,
+  `harga` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rute`
+-- Dumping data untuk tabel `tarif`
 --
 
-INSERT INTO `rute` (`id`, `depart_at`, `rute_from`, `rute_to`, `arrival`, `price`, `id_transportation`, `creat_date`) VALUES
-(1, '2018-02-28 07:00:00', '1', '7', '2018-02-28 08:00:00', '750000', '1', '2018-02-24 21:45:53'),
-(2, '2018-02-28 08:00:00', '2', '7', '2018-02-28 08:55:00', '900000', '3', '2018-02-25 08:47:41'),
-(3, '2018-02-28 18:00:00', '10', '1', '2018-02-28 19:05:00', '450000', '2', '2018-02-24 21:50:56'),
-(4, '2018-02-28 19:00:00', '1', '6', '2018-02-28 20:15:00', '600000', '1', '2018-02-24 21:53:40'),
-(5, '2018-02-28 18:00:00', '2', '6', '2018-02-28 19:55:00', '500000', '2', '2018-02-24 21:56:04'),
-(6, '2018-02-28 01:00:00', '2', '6', '2018-02-28 02:00:00', '300000', '4', '2018-02-26 23:50:49');
+INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`) VALUES
+(1, 0, '750000'),
+(2, 0, '900000'),
+(3, 0, '450000'),
+(4, 0, '600000'),
+(5, 0, '500000'),
+(6, 0, '300000');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transportation`
---
-
-CREATE TABLE `transportation` (
-  `id` int(11) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `code` varchar(13) NOT NULL,
-  `description` text NOT NULL,
-  `seat_qty` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `transportation`
---
-
-INSERT INTO `transportation` (`id`, `img`, `name`, `code`, `description`, `seat_qty`) VALUES
-(1, 'gi.png', 'Garuda Indonesia', 'GIA', 'Ini adalah pesawat perfect', 90),
-(2, 'la.png', 'Lion Air', 'LNI', 'pesawat singa', 90),
-(3, 'Logo+Citilink.png', 'CITILINK', 'CTV', 'best plane 2k18', 90),
-(4, 'batik-air.png', 'Batik Air', 'BTK', 'Pesawat berbatik', 90);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -201,107 +138,84 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `username`, `telepon`, `password`, `level`) VALUES
 (8, 'Chelsea Ramadanti Anisah Putri', 'chelsea.rputri@gmail.com', 'chiii', '0897674668797', '81dc9bdb52d04dc20036dbd8313ed055', 0),
 (10, 'zainal', 'zainzain@gmail.com', 'zain', '089765675646', '81dc9bdb52d04dc20036dbd8313ed055', 0),
-(13, 'ilham ramadhan', 'admin@admin.com', 'admin', '088814214', '21232f297a57a5a743894a0e4a801fc3', 1);
+(13, 'ilham ramadhan', 'admin@admin.com', 'admin', '088814214', '21232f297a57a5a743894a0e4a801fc3', 1),
+(14, 'DavidB', 'david@gmail.com', 'david1', '098', '5ff84c7646419ffeb65cb5625de99723', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `airport`
+-- Indeks untuk tabel `booking`
 --
-ALTER TABLE `airport`
+ALTER TABLE `booking`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `customer`
+-- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `lapangan`
+-- Indeks untuk tabel `lapangan`
 --
 ALTER TABLE `lapangan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `reservation`
+-- Indeks untuk tabel `tarif`
 --
-ALTER TABLE `reservation`
+ALTER TABLE `tarif`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `reservation_code` (`reservation_code`);
+  ADD KEY `id_lapangan` (`id_lapangan`);
 
 --
--- Indexes for table `rute`
---
-ALTER TABLE `rute`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `transportation`
---
-ALTER TABLE `transportation`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `airport`
+-- AUTO_INCREMENT untuk tabel `booking`
 --
-ALTER TABLE `airport`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `booking`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `customer`
+-- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `lapangan`
+-- AUTO_INCREMENT untuk tabel `lapangan`
 --
 ALTER TABLE `lapangan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `reservation`
+-- AUTO_INCREMENT untuk tabel `tarif`
 --
-ALTER TABLE `reservation`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `rute`
---
-ALTER TABLE `rute`
+ALTER TABLE `tarif`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `transportation`
---
-ALTER TABLE `transportation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
