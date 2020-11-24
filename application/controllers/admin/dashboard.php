@@ -9,8 +9,21 @@ class Dashboard extends CI_Controller {
 		$this->m_admin->sesiku();
 	}
 
+	// public function index(){
+ //        $list = $this ->m_admin->clapangan();
+ //        $id = $this->session->userdata('id_session');
+ //        $data = array(
+ //            'menu' => 'Menu',
+ //            'panelbody' => 'obat/tbl_obat_list',
+ //            'id' => $id,
+ //            "list" => $list
+ //        );
+ //        $this ->load ->view('panelbody',$data);
+ //    }
+
 	public function index()
 	{
+
 		$data['clapangan']=$this->m_admin->clapangan();
 		
 	
