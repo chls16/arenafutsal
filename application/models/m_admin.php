@@ -13,8 +13,7 @@ Class M_admin extends CI_Model
 	
 
 	function clapangan(){
-		$query = $this->db->query('SELECT A.*,D.lapangan FROM lapangan A JOIN tarif D WHERE A.id='.$id.' AND D.id=A.id_lapangan');
-		return $query;
+		return $this->db->query('SELECT COUNT(*) as jumlah FROM lapangan;')->result();
 	}
 
 	
@@ -67,7 +66,10 @@ Class M_admin extends CI_Model
 	}
 
 	function tampil_lapangan(){
-		return $this->db->get('lapangan')->result();
+		$this->db->select("*");
+		$this->db->from("lapangan a");
+		$this->db->join("tarif b","a.id=b.id_lapangan","left");
+		return $this->db->get()->result();
 	}
 
 	function add_lapangan($data){

@@ -12,33 +12,22 @@
 		<?php $this->load->view('admin/common/menu'); ?>
 		<div class="content-wrapper">
 			<section class="content-header">
-				<h1>Create Data</h1>
+				<h1>Tambah Data</h1>
 				<form action="<?php echo base_url(). 'admin/lapangan/add_lapangan'; ?>" method="post">
 				</section>
 				<section class="content">
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">lapangan</h3>
+							<h3 class="box-title">Lapangan</h3>
 						</div>
 						<div class="box-body">
+							<div class="p-20">
 							<div class="form-group">
-								<div class="form-group">
-									<label>Kota : </label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-building"></i>
-										</div>
-										<input name="lapangan" type="text" class="form-control" required/>
-									</div>
-									<label>Kode : </label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-qrcode"></i>
-										</div>
-										<input name="iso" type="text" class="form-control" required/>
-										<input name="id" type="hidden" class="form-control" required/>
-									</div>
-								</div>
+									<label class="col-md-2 control-label" for="">Nama Lapangan</label>
+									<div class="col-md-6">
+                                		<input type="text" name="nama_obat" class="form-control" nama="exampleInputEmail1">
+                            		</div>
+							</div>
 								<input type="submit" class="btn btn-primary" />
 							</div>
 						</div>

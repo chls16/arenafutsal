@@ -21,7 +21,7 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-						<li><a href="<?php echo base_url(); ?>admin/transportation"><i class="fa fa-futbol"></i> Lapangan</a></li>
+						<li><a href="<?php echo base_url(); ?>admin/lapangan"><i class="fa fa-soccer-ball-o"></i> Lapangan</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/reservation"><i class="fa fa-book"></i> Booking Lapangan</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/destinations"><i class="fa fa-building"></i> Waktu Bermain</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/airport"><i class="fa fa-building-o"></i> Airport</a></li>

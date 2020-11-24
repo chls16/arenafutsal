@@ -21,16 +21,21 @@
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">lapangan</h3>
+								<h2 class="box-title">Lapangan</h2>
+
+							</div>
+							<div class="box-header">
+								<a type="button" href="<?php echo base_url('admin/lapangan/add') ?>" class="btn btn-success btn-sm"><span class="fa fa-file-o"> Tambah</span></a>
 							</div>
 							<div class="box-body">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
 										<tr>
-											<th width="15%">No</th>
-											<th>Nama Lapangan</th>
+											<th width="15px">No</th>
+											<th >Nama Lapangan</th>
 											<th>Tarif</th>
-											
+											<th>Keterangan</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -39,8 +44,8 @@
 										<tr>
 											<td><?php  echo $no++; ?></td>
 											<td><?php echo $data->lapangan ?></td>
-											<td><?php echo $data->iso ?></td>
-											<td>Contoh</td>
+											<td><?php echo $data->harga ?></td>
+											<td><?php echo $data->keterangan ?></td>
 											<td>
 												<a type="button" href="<?php echo base_url('admin/lapangan/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
 												<a type="button" href="<?php echo base_url('admin/lapangan/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->lapangan ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>

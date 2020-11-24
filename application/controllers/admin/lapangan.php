@@ -18,7 +18,7 @@ class Lapangan extends CI_Controller {
 
 	function add()
 	{
-		$this->load->view('admin/lapangan/add');
+		$this->load->view('admin/lapangan/add_lap');
 	}
 
 	function add_lapangan()
