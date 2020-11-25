@@ -23,14 +23,29 @@
 						<div class="box-body">
 							<div class="p-20">
 							<div class="form-group">
-									<label class="col-md-2 control-label" for="">Nama Lapangan</label>
-									<div class="col-md-6">
-                                		<input type="text" name="nama_obat" class="form-control" nama="exampleInputEmail1">
-                            		</div>
+								<label class="col-md-2" for="">Nama Lapangan</label>
+								<div class="col-md-10">
+                               		<input type="text" name="lapangan" class="form-control" nama="exampleInputEmail1">
+                           		</div>
 							</div>
+							
+							<div class="form-group">
+								<label class="">Logo</label>
+								<div class="">
+									<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-image"></i>
+									</div>
+									<input name="img" type="file" class="form-control" required />
+								</div>
+								</div>
+							</div>
+
 								<input type="submit" class="btn btn-primary" />
 							</div>
 						</div>
+
+					</div>
 					</section>
 				</form> 
 			</div>
