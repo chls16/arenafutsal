@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Nov 2020 pada 21.28
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.33
+-- Waktu pembuatan: 26 Nov 2020 pada 11.58
+-- Versi server: 10.3.16-MariaDB
+-- Versi PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -106,20 +107,21 @@ INSERT INTO `lapangan` (`id`, `lapangan`) VALUES
 CREATE TABLE `tarif` (
   `id` int(11) NOT NULL,
   `id_lapangan` int(11) NOT NULL,
-  `harga` varchar(13) NOT NULL
+  `harga` varchar(13) NOT NULL,
+  `keterangan` enum('Siang','Malam') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tarif`
 --
 
-INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`) VALUES
-(1, 0, '750000'),
-(2, 0, '900000'),
-(3, 0, '450000'),
-(4, 0, '600000'),
-(5, 0, '500000'),
-(6, 0, '300000');
+INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`, `keterangan`) VALUES
+(1, 1, '750000', 'Siang'),
+(2, 1, '900000', 'Malam'),
+(3, 2, '450000', ''),
+(4, 0, '600000', ''),
+(5, 0, '500000', ''),
+(6, 0, '300000', '');
 
 -- --------------------------------------------------------
 
