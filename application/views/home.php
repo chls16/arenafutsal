@@ -32,32 +32,33 @@
 							</ul>
 						</div>
 						<div class="box-body">
-								<table id="example1" class="table table-bordered table-striped">
-									<thead>
-										<tr>
-											<th width="15px">No</th>
-											<th >Nama Lapangan</th>
-											<th>Tarif</th>
-											<th>Keterangan</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-										<?php $no = 1; ?>
-										<?php foreach ($lapangan as $data){?>
+							<table id="example1" class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th width="15px">No</th>
+										<th >Nama Lapangan</th>
+										<th>Tarif</th>
+										<th>Keterangan</th>										
+									</tr>
+								</thead>
+								<tbody>
+									<?php $no = 1; ?>
+									<?php foreach ($lapangan as $data){?>
 										<tr>
 											<td><?php  echo $no++; ?></td>
 											<td><?php echo $data->lapangan ?></td>
 											<td><?php echo $data->harga ?></td>
-											<td><?php echo $data->keterangan ?></td>
-											
+											<td><?php echo $data->keterangan ?></td>							
 										</tr>
-										<?php } ?>
-											<div class="form-group row">
-												<div class="col-xs-6 pull-right">
-													<button type="submit" class="full-width">CARI LAPANGAN</button>
-												</div>
-											</div>
+									<?php } ?>
+								</tbody>
+							</table>
+						</div>
+						<div class="form-group row">
+							<div class="col-xs-6 pull-right">
+								<button type="submit" class="full-width">CARI LAPANGAN</button>
+							</div>
+						</div>
 										</div>
 									</div>
 								</form>
