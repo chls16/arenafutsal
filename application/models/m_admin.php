@@ -65,11 +65,9 @@ Class M_admin extends CI_Model
 		return $query->result();
 	}
 
-	function tampil_lapangan(){
-		$this->db->select("*");
-		$this->db->from("lapangan a");
-		$this->db->join("tarif b","a.id=b.id_lapangan","left");
-		return $this->db->get()->result();
+	function tampil_lapangan()
+	{
+		return $this->db->get('lapangan')->result();
 	}
 
 	function add_lapangan($data){
@@ -157,3 +155,4 @@ Class M_admin extends CI_Model
 	}
 }
 ?>
+

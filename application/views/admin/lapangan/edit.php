@@ -47,21 +47,21 @@
 					</div>
 						<div class="box-body">
 							<div class="form-group">
-								<label>Nama Kota</label>
+								<label>Nama Lapangan</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-plane"></i>
 									</div>
-									<input name="lapangan" type="text" class="form-control" placeholder="Pesawat" value="<?= $data->lapangan ?>" required/>
+									<input name="lapangan" type="text" class="form-control" placeholder="Harga" value="<?= $data->lapangan ?>" required/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Kode Kota</label>
+								<label>Tarif</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-qrcode"></i>
 									</div>
-									<input name="iso" type="text" class="form-control" value="<?= $data->iso ?>"  placeholder="Kode" required/>
+									<input name="harga" type="text" class="form-control" value="<?= $data->harga ?>"  placeholder="Harga" required/>
 								</div>
 								<?php } ?>
 							</div>

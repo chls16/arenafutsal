@@ -30,7 +30,6 @@
 											<th>Email</th>
 											<th>Username</th>
 											<th>Telepon</th>
-											<th>Jenis Kelamin</th>
 											<th>Password</th>
 											<th>Level</th>
 											<th width="15%">Action</th>
@@ -45,12 +44,6 @@
 											<td><?php echo $data->email ?></td>
 											<td><?php echo $data->username ?></td>
 											<td><?php echo $data->telepon ?></td>
-											<td>
-												<?php if ($data->jenkel=='L' ) {
-													echo "Pria";
-												}else{
-													echo "Wanita";
-												} ?>
 											</td>
 											<td>********</td>
 											<td>

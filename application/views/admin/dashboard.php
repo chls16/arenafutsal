@@ -15,14 +15,14 @@
 			<section class="content">
 				<div class="row">
 					<div class="col-lg-3 col-xs-6">
-						<div class="small-box bg-aqua">
+						<div class="small-box bg-green">
 							<div class="inner">
 								<h3><?=$clapangan[0]->jumlah ?>
 								</h3>
-								<p>Kota</p>
+								<p>Lapangan</p>
 							</div>
 							<div class="icon">
-								<i class="fa fa-building"></i>
+								<i class="fa fa-soccer-ball-o"></i>
 							</div>
 							<a href="<?=base_url() ?>admin/lapangan" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
 						</div>
@@ -31,10 +31,10 @@
 						<div class="small-box bg-red">
 							<div class="inner">
 								<h3><?=$crute[0]->jumlah ?></h3>
-								<p>Rute</p>
+								<p>Booking</p>
 							</div>
 							<div class="icon">
-								<i class="fa fa-road"></i>
+								<i class="fa fa-calendar"></i>
 							</div>
 							<a href="<?=base_url() ?>admin/rute" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
 						</div>

@@ -32,10 +32,11 @@
 									<thead>
 										<tr>
 											<th width="15px">No</th>
+											<th >Gambar</th>
 											<th >Nama Lapangan</th>
 											<th>Tarif</th>
 											<th>Keterangan</th>
-											<th></th>
+											<th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -43,6 +44,7 @@
 										<?php foreach ($lapangan as $data){?>
 										<tr>
 											<td><?php  echo $no++; ?></td>
+											<td><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="150px" height="100px"></td>
 											<td><?php echo $data->lapangan ?></td>
 											<td><?php echo $data->harga ?></td>
 											<td><?php echo $data->keterangan ?></td>
