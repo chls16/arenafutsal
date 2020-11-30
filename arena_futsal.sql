@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Nov 2020 pada 11.58
--- Versi server: 10.3.16-MariaDB
--- Versi PHP: 7.1.30
+-- Waktu pembuatan: 30 Nov 2020 pada 09.52
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -79,24 +78,25 @@ INSERT INTO `customer` (`id`, `id_users`, `name`, `noid`) VALUES
 
 CREATE TABLE `lapangan` (
   `id` int(11) NOT NULL,
-  `lapangan` varchar(255) NOT NULL
+  `img` varchar(100) NOT NULL,
+  `lapangan` varchar(255) NOT NULL,
+  `harga` int(12) NOT NULL,
+  `keterangan` enum('Siang','Malam') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `lapangan`
 --
 
-INSERT INTO `lapangan` (`id`, `lapangan`) VALUES
-(1, 'Bandung'),
-(2, 'Jakarta'),
-(3, 'Surabaya'),
-(4, 'Solo'),
-(5, 'Cilacap'),
-(6, 'Yogyakarta'),
-(7, 'Semarang'),
-(8, 'Aceh'),
-(9, 'Bengkulu'),
-(10, 'Lampung');
+INSERT INTO `lapangan` (`id`, `img`, `lapangan`, `harga`, `keterangan`) VALUES
+(1, 'st.jpg', 'Sintetis 1', 60000, 'Siang'),
+(2, 'st.jpg', 'Sintetis 2', 60000, 'Siang'),
+(3, 'tr.jpg', 'Taraflex 1', 75000, 'Siang'),
+(4, 'tr.jpg', 'Taraflex 2', 75000, 'Siang'),
+(5, 'st.jpg', 'Sintetis 1', 75000, 'Malam'),
+(6, 'st.jpg', 'Sintetis 2', 75000, 'Malam'),
+(7, 'tr.jpg', 'Taraflex 1', 90000, 'Malam'),
+(8, 'tr.jpg', 'Taraflex 2', 90000, 'Malam');
 
 -- --------------------------------------------------------
 
@@ -116,12 +116,14 @@ CREATE TABLE `tarif` (
 --
 
 INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`, `keterangan`) VALUES
-(1, 1, '750000', 'Siang'),
-(2, 1, '900000', 'Malam'),
-(3, 2, '450000', ''),
-(4, 0, '600000', ''),
-(5, 0, '500000', ''),
-(6, 0, '300000', '');
+(1, 1, '60000', 'Siang'),
+(2, 2, '60000', 'Siang'),
+(3, 3, '75000', 'Siang'),
+(4, 4, '75000', 'Siang'),
+(5, 1, '75000', 'Malam'),
+(6, 2, '75000', 'Malam'),
+(7, 3, '90000', 'Malam'),
+(8, 4, '90000', 'Malam');
 
 -- --------------------------------------------------------
 
@@ -144,10 +146,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `email`, `username`, `telepon`, `password`, `level`) VALUES
-(8, 'Chelsea Ramadanti Anisah Putri', 'chelsea.rputri@gmail.com', 'chiii', '0897674668797', '81dc9bdb52d04dc20036dbd8313ed055', 0),
-(10, 'zainal', 'zainzain@gmail.com', 'zain', '089765675646', '81dc9bdb52d04dc20036dbd8313ed055', 0),
-(13, 'ilham ramadhan', 'admin@admin.com', 'admin', '088814214', '21232f297a57a5a743894a0e4a801fc3', 1),
-(14, 'DavidB', 'david@gmail.com', 'david1', '098', '5ff84c7646419ffeb65cb5625de99723', 0);
+(1, 'Zainal Abidin', 'admin@admin.com', 'admin', '088814214', '21232f297a57a5a743894a0e4a801fc3', 1),
+(2, 'Chelsea Ramadanti Anisah Putri', 'chelsea.rputri@gmail.com', 'chiii', '0897674668797', '81dc9bdb52d04dc20036dbd8313ed055', 0),
+(3, 'DavidB', 'david@gmail.com', 'david1', '098', '5ff84c7646419ffeb65cb5625de99723', 0),
+(4, 'zainal', 'zainzain@gmail.com', 'zain', '089765675646', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 --
 -- Indexes for dumped tables
@@ -157,13 +159,17 @@ INSERT INTO `users` (`id`, `nama`, `email`, `username`, `telepon`, `password`, `
 -- Indeks untuk tabel `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_user` (`id_user`),
+  ADD UNIQUE KEY `id_user_2` (`id_user`),
+  ADD KEY `id_lapangan` (`id_lapangan`);
 
 --
 -- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_users` (`id_users`);
 
 --
 -- Indeks untuk tabel `lapangan`
@@ -211,13 +217,13 @@ ALTER TABLE `lapangan`
 -- AUTO_INCREMENT untuk tabel `tarif`
 --
 ALTER TABLE `tarif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
