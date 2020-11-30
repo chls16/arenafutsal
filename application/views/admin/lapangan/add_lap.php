@@ -20,35 +20,53 @@
 						<div class="box-header with-border">
 							<h3 class="box-title">Lapangan</h3>
 						</div>
-						<div class="form-group">
-								<label class="col-md-2" for="">Nama Lapangan</label>
-								<div class="col-md-10">
+						<div class="box-body">
+							<div class="form-group">
+								<label>Foto Lapangan</label>
 								<div class="input-group">
 									<div class="input-group-addon">
-										<i class="fa fa-plane"></i>
+										<i class="fa fa-image"></i>
 									</div>
-									<input name="name" type="text" class="form-control" placeholder="Pesawat" required/>
+									<input name="img" type="file" class="form-control" required />
 								</div>
 							</div>
-							<div class="box-body">
 							<div class="form-group">
-								<div class="form-group">
-
-									<label class="col-md-2" for="">Tarif Lapangan</label>
-									<div class="col-md-10">
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-building"></i>
-										</div>
-										<input name="destination" type="text" class="form-control" required/>
+								<label>Nama Lapangan</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-soccer-ball-o"></i>
 									</div>
-
-								<input type="submit" class="btn btn-primary" />
+									<input name="name" type="text" class="form-control" placeholder="Lapangan" required/>
+								</div>
 							</div>
+							<div class="form-group">
+								<label>Harga Lapangan</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-money"></i>
+									</div>
+									<input name="harga" type="text" class="form-control" placeholder="Harga" required/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Keterangan</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-clock-o"></i>
+									</div>
+									<div class="col-md-10">
+                                    <select class="form-control" name="jk">
+                                        <option disabled selected value>- Pilih Waktu -</option>
+                                        <option value="Siang">Siang</option>
+                                        <option value="Malam">Malam</option>
+                                    </select>
+                                	</div>
+								</div>
+							</div>
+							<input type="submit" class="btn btn-primary" />
 						</div>
-
 					</div>
-					</section>
+				</section>
 				</form> 
 			</div>
 			<div class="control-sidebar-bg"></div>
