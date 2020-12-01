@@ -2,9 +2,9 @@
 
 class Page extends CI_Controller {
 
-	public function pembelian()
+	public function booking()
 	{
-		$this->load->view('page/pembelian');
+		$this->load->view('page/booking');
 	}
 
 	public function kontak()

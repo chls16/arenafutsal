@@ -21,6 +21,19 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$list = $this ->Model_obat->get_obatlist()->result();
+        $id = $this->session->userdata('id_session');
+        $data = array(
+            'menu' => 'Menu',
+            'panelbody' => 'obat/tbl_obat_list',
+            'id' => $id,
+            "list" => $list
+        );
+        $this ->load ->view('panelbody',$data);
+
+        $user = $this->m_account->getuser($this->session->userdata('id'));
+        $lapangan = $this->m_account->lapangan();
+
 		$this->load->model('m_admin');
 		$data['user']=$this->m_account->getuser($this->session->userdata('id'));
 		$data['lapangan']=$this->m_account->lapangan();

@@ -9,7 +9,7 @@
 					<a href="#" title="">MY ACCOUNT</a>
 					<ul class="menu mini">
 						<?php
-						$wkwk = $user;
+						$wkwk = $data['user'];
 
 						if ($wkwk = $wkwk) {
 							echo "<li><a href=\"http://localhost/arenafutsal/akun/\" title=\"My Profile\">Profile</a></li>";
@@ -43,7 +43,7 @@
 						<a href="<?php echo base_url(); ?>pesawat"><b>Lapangan</b></a>
 					</li>
 					<li class="menu-item-has-children">
-						<a href="<?php echo base_url(); ?>page/pembelian"><b>Cara Booking</b></a>
+						<a href="<?php echo base_url(); ?>page/booking"><b>Booking</b></a>
 					</li>
 					<li class="menu-item-has-children">
 						<a href="<?php echo base_url(); ?>page/about"><b>Tentang Kami</b></a>
@@ -63,7 +63,7 @@
 						<a href="<?php echo base_url(); ?>pesawat"><b>Lapangan</b></a>
 					</li>
 					<li class="menu-item-has-children">
-						<a href="<?php echo base_url(); ?>page/pembelian"><b>Cara Booking</b></a>
+						<a href="<?php echo base_url(); ?>page/booking"><b>Booking</b></a>
 					</li>
 					<li class="menu-item-has-children">
 						<a href="<?php echo base_url(); ?>page/about"><b>Tentang Kami</b></a>
