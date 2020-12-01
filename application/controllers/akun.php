@@ -31,7 +31,7 @@ class Akun extends CI_Controller {
      {
         $this->ndol_login->cek_login();
         $data['user']=$this->m_account->getuser($this->session->userdata('id'));
-        $data['inyong']=$this->m_account->tiket_akun($this->session->userdata('id'));
+        $data['inyong']=$this->m_account->getuser($this->session->userdata('id'));
      	$this->load->view('akun/index',$data);
      }
 

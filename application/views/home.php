@@ -24,7 +24,7 @@
 				<div class="search-box-wrapper style2">
 					<div class="search-box">
 						<ul class="search-tabs clearfix">
-							<li class="active"><a  data-toggle="tab"><i class="soap-icon-calendar-check"></i><span>CARI JADWAL LAPANGAN</span></a></li>
+							<li class="active"><a  data-toggle="tab"><i class="soap-icon-calendar-check"></i><span>DAFTAR LAPANGAN</span></a></li>
 						</ul>
 						<div class="visible-mobile">
 							<ul id="mobile-search-tabs" class="search-tabs clearfix">
@@ -38,7 +38,7 @@
 										<th width="15px">No</th>
 										<th >Nama Lapangan</th>
 										<th>Tarif</th>
-										<th>Keterangan</th>										
+										<th>Waktu</th>										
 									</tr>
 								</thead>
 								<tbody>
@@ -54,11 +54,7 @@
 								</tbody>
 							</table>
 						</div>
-						<div class="form-group row">
-							<div class="col-xs-6 pull-right">
-								<button type="submit" class="full-width">CARI LAPANGAN</button>
-							</div>
-						</div>
+						
 										</div>
 									</div>
 								</form>
