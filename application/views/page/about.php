@@ -33,8 +33,6 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>gudang/css/responsive.css">
 </head>
 <body>
-    <div id="page-wrapper">
-<?php $this->load->view('common/header'); ?>
         <div class="page-title-container">
             <div class="container">
                 <div class="page-title pull-left">
@@ -267,10 +265,6 @@
                 </div> <!-- end main -->
             </div>
         </section>
-        
-        <footer id="footer">
-            <?php $this->load->view('common/footer'); ?>
-        </footer>
     </div>
 <?php $this->load->view('common/scbawah'); ?>  
 </body>
