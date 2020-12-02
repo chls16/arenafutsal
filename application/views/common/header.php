@@ -40,10 +40,10 @@
 						<a href="<?php echo base_url(); ?>"><b>Home</b></a>
 					</li>
 					<li class="menu-item-has-children">
-						<a href="<?php echo base_url(); ?>pesawat"><b>Lapangan</b></a>
+						<a href="<?php echo base_url(); ?>Home"><b>Lapangan</b></a>
 					</li>
 					<li class="menu-item-has-children">
-						<a href="<?php echo base_url(); ?>page/booking"><b>Booking</b></a>
+						<a href="<?php echo base_url(); ?>Booking"><b>Booking</b></a>
 					</li>
 					<li class="menu-item-has-children">
 						<a href="<?php echo base_url(); ?>page/about"><b>Tentang Kami</b></a>
