@@ -38,13 +38,10 @@
 	<link rel="stylesheet" href="<?=base_url() ?>gudang/css/responsive.css">
 </head>
 <body>
-
-	<div id="page-wrapper">
-		<?php $this->load->view('common/header'); ?>
 		<div class="page-title-container style4">
 			<div class="container">
 				<div class="page-title">
-                    <i class="soap-icon-plane-right takeoff-effect"></i>
+                    <i class="soap-icon-card"></i>
                     <h2 class="entry-title">Pemesanan</h2>
                 </div>
 				<ul class="breadcrumbs pull-right">
@@ -87,15 +84,6 @@
 											<label>Nomor Telepon</label>
 											<input type="text" class="input-text full-width" value="<?=$key->telepon ?>" placeholder="" disabled/>
 										</div>
-										<div class="col-sm-12">
-											<label>Jenis Kelamin</label>
-											<div class="selector">
-												<select class="full-width" disabled>
-													<option value="Laki-Laki" <?php echo($key->jenkel=='L'?"selected":"") ?>>Laki-Laki</option>
-													<option value="Perempuan" <?php echo($key->jenkel=='P'?"selected":"") ?>>Perempuan</option>
-												</select>
-											</div>
-										</div>
 										<input type="hidden" name="id_users" value="<?=$key->id ?>">
 										<input type="hidden" name="telepon" value="<?=$key->telepon ?>">
 									</div>
@@ -115,7 +103,7 @@
 										<?php }?>
 									</div>
 
-									<a href="#"><span class="skin-color">Pilih Kursi</span></a><br><br>
+									<a href="#"><span class="skin-color">Pilih Lapangan</span></a><br><br>
 									<?php foreach ($rute as $key) { ?>
 									
 										<?php $yeah=$key->seat_qty; 
