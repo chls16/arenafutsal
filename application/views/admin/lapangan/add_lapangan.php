@@ -36,7 +36,7 @@
 									<div class="input-group-addon">
 										<i class="fa fa-soccer-ball-o"></i>
 									</div>
-									<input name="name" type="text" class="form-control" placeholder="Lapangan" required/>
+									<input name="lapangan" type="text" class="form-control" placeholder="Lapangan" required/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -55,7 +55,7 @@
 										<i class="fa fa-clock-o"></i>
 									</div>
 									<div class="col-md-10">
-                                    <select class="form-control" name="jk">
+                                    <select class="form-control" name="keterangan"  required/>
                                         <option disabled selected value>- Pilih Waktu -</option>
                                         <option value="Siang">Siang</option>
                                         <option value="Malam">Malam</option>
@@ -95,7 +95,7 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">lapangan</h3>
 					</div>
-					<form action="<?php echo base_url(). 'admin/lapangans/add_lapangan'; ?>" method="post" class="form-horizontal">
+					<form action="<?php echo base_url(). 'admin/lapangan/add_lapangan'; ?>" method="post" class="form-horizontal">
 						<div class="box-body">
 							<div class="form-group">
 								<label class="col-sm-2 control-label">Nama Kota</label>

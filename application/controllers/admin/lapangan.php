@@ -18,7 +18,7 @@ class Lapangan extends CI_Controller {
 
 	function add()
 	{
-		$this->load->view('admin/lapangan/add_lap');
+		$this->load->view('admin/lapangan/add_lapangan');
 	}
 
 	function add_lapangan()
@@ -28,8 +28,8 @@ class Lapangan extends CI_Controller {
 		$config['upload_path']          = './gudang/images/logo/';
 		// $config['allowed_types']        = 'png|jpg|PNG';
 		$config['allowed_types']        = '*';
-		$config['max_size']             = 1000;
-		$config['max_width']            = 1200;
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
 		$config['max_height']           = 768;	
 
 		$this->load->library('upload', $config);
@@ -49,14 +49,18 @@ class Lapangan extends CI_Controller {
 
 		//awal
 
-		$id = $this->input->post('id');
+		
 		$lapangan = $this->input->post('lapangan');
-		$id_tarif = $this->input->post('id_tarif');
+		$harga = $this->input->post('harga');
+		$keterangan = $this->input->post('keterangan');
 		
 		$data = array(
 			'id' => $id,
 			'img' => $img,
 			'lapangan' => $lapangan,
+			'harga' => $harga,
+			'keterangan' => $keterangan,
+
 		);
 		$this->m_admin->add_lapangan($data,'lapangan');
 		redirect('admin/lapangan');
