@@ -6762,7 +6762,7 @@ ul.search-tabs {
       border: 1px solid #d1d1d1; }
     .search-box-wrapper.style2 .search-tab-content .selector span.custom-select:before {
       background: #d1d1d1; }
-    .search-box-wrapper.style2 .search-tab-content .datepicker-wrap:after {
+    .search-box-wrapper.style2 .search-tab-content .datetimepicker-wrap:after {
       background: transparent;
       color: #d1d1d1; }
     .search-box-wrapper.style2 .search-tab-content button {

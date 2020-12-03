@@ -89,6 +89,18 @@
 									
 
 									<div class="col-sm-12">
+											<label>Tanggal</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<div class="datepicker-wrap">
+														<input name="tanggal_booking" type="text" class="input-text full-width" placeholder="Tanggal" />
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									<div class="col-sm-12">
 											<label>Lapangan</label>
 												<div class="selector">
 														<select class="full-width" name="lapangan" required>
