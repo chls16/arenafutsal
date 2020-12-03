@@ -90,26 +90,26 @@
 
 									<div class="col-sm-12">
 											<label>Lapangan</label>
-												<select name="lapangan" class="input-text full-width" required>
-													<option value="">Pilih Lapangan</option>
-													<?php foreach ($lapangan as $data) {
-														# code...
-													?>
-													<option value="<?php echo $data->lapangan ?>"><?php echo $data->lapangan ?></option>
-													<?php } ?>
-												</select>
+												<div class="selector">
+														<select class="full-width" name="lapangan" required>
+															<option value="">Pilih Lapangan</option>
+															<option value="1">Sintetis</option>
+															<option value="2">Taraflex</option>
+															
+														</select>
 									</div>
+								</div>
 
 									<div class="col-sm-12">
-											<label>Waktu</label>
-												<select name="keterangan" class="input-text full-width" required>
-													<option value="">Pilih Waktu</option>
-													<?php foreach ($lapangan as $data) {
-														# code...
-													?>
-													<option value="<?php echo $data->keterangan ?>"><?php echo $data->keterangan ?></option>
-													<?php } ?>
-												</select>
+										 <label>Waktu</label>
+											<div class="selector">
+														<select class="full-width" name="keterangan" required>
+															<option value="">Pilih Waktu</option>
+															<option value="1">Siang</option>
+															<option value="2">Malam</option>
+															
+														</select>
+													</div>
 									</div>
 									
 									</div>
