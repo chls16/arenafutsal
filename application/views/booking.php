@@ -86,71 +86,34 @@
 										</div>
 										<input type="hidden" name="id_users" value="<?=$key->id ?>">
 										<input type="hidden" name="telepon" value="<?=$key->telepon ?>">
-									</div>
-									<div class="card-information">
-										<?php for($x=1;$x<=$seat_qty;$x++) {?>
-										<h2>Data Penumpang <?=$x ?></h2>
-										<div class="form-group row">
-											<div class="col-sm-6">
-												<label>Nama Lengkap</label>
-												<input type="text" name="name[]" class="input-text full-width" value="" placeholder="" required />
-											</div>
-											<div class="col-sm-6">
-												<label>Nomor Identitas</label>
-												<input type="text" name="noid[]" class="input-text full-width" value="" placeholder="" required />
-											</div>
-										</div>
-										<?php }?>
-									</div>
-
-									<a href="#"><span class="skin-color">Pilih Lapangan</span></a><br><br>
-									<?php foreach ($rute as $key) { ?>
 									
-										<?php $yeah=$key->seat_qty; 
-											$kursipesan = array();
-											foreach ($booked as $seat) {
-												$kursipesan[] = $seat->seat_code;
-											}
-										 ?>
 
-									<?php } ?>
-									 <style type="text/css">
-									 	.kursiorang{
-									 		display: none;
-									 	}
-									 	.kursiorang + .state.p-success-o label::after{
-									 		background-color: red;
-									 	}
-									 </style>
-									<?php for($i = 1; $i <= $yeah; $i++) {?>
-									<div class="pretty p-default p-curve">
-
-										<input type="checkbox" name="seat_code[]"  
-											<?php
-												if(in_array($i, $kursipesan)){
-													echo "class='kursiorang' ";
-												}else{
-
-												}
-											?>
-										 value="<?=sprintf("%03d", $i);?>" required/>
-										<div class="state p-success-o">
-											<label><?=sprintf("%03d", $i);?></label>
-										</div>
+									<div class="col-sm-12">
+											<label>Lapangan</label>
+												<select name="lapangan" class="input-text full-width" required>
+													<option value="">Pilih Lapangan</option>
+													<?php foreach ($lapangan as $data) {
+														# code...
+													?>
+													<option value="<?php echo $data->lapangan ?>"><?php echo $data->lapangan ?></option>
+													<?php } ?>
+												</select>
 									</div>
-									<?php } ?>
 
-									<?php foreach ($rute as $idrute) {} ?>
-									<input type="hidden" name="rute_id" value="<?php echo(float)$idrute->id ?>">
-									<hr />
-									<div class="form-group">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
-											</label>
-										</div>
+									<div class="col-sm-12">
+											<label>Waktu</label>
+												<select name="keterangan" class="input-text full-width" required>
+													<option value="">Pilih Waktu</option>
+													<?php foreach ($lapangan as $data) {
+														# code...
+													?>
+													<option value="<?php echo $data->keterangan ?>"><?php echo $data->keterangan ?></option>
+													<?php } ?>
+												</select>
 									</div>
-									<div class="form-group row">
+									
+									</div>
+								<div class="form-group row">
 										<div class="col-sm-6 col-md-5">
 											<button type="submit" class="full-width btn-large">BOOKING</button>
 										</div>
