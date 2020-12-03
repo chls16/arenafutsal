@@ -106,7 +106,7 @@ Class M_admin extends CI_Model
 
 	function update_lapangan($id,$data){
 		$this->db->where('id', $id);
-		$this->db->update('users', $data);
+		$this->db->update('lapangan', $data);
 	}
 
 	function update_user($id,$data){

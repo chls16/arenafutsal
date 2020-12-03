@@ -50,7 +50,7 @@
 								<label>Nama Lapangan</label>
 								<div class="input-group">
 									<div class="input-group-addon">
-										<i class="fa fa-plane"></i>
+										<i class="fa fa-soccer-ball-o"></i>
 									</div>
 									<input name="lapangan" type="text" class="form-control" placeholder="Harga" value="<?= $data->lapangan ?>" required/>
 								</div>
@@ -59,11 +59,27 @@
 								<label>Tarif</label>
 								<div class="input-group">
 									<div class="input-group-addon">
-										<i class="fa fa-qrcode"></i>
+										<i class="fa fa-money"></i>
 									</div>
 									<input name="harga" type="text" class="form-control" value="<?= $data->harga ?>"  placeholder="Harga" required/>
 								</div>
 								<?php } ?>
+							</div>
+							<div class="form-group">
+								<label>Keterangan</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-soccer-ball-o"></i>
+									</div>
+									
+                                    <select class="form-control" name="keterangan"  type="text" class="form-control" placeholder="Harga" value="<?= $data->keterangan ?>" required/>
+          
+                                        <option value="Siang">Siang</option>
+                                        <option value="Malam">Malam</option>
+                                    </select>
+									</div>
+									  <div class="col-md-10">
+								</div>
 							</div>
 						<input type="submit" class="btn btn-primary" />
 					</div>

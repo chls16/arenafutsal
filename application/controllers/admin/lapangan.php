@@ -75,11 +75,14 @@ class Lapangan extends CI_Controller {
 
 	function update($id){
 		$lapangan = $this->input->post('lapangan');
-		$id_tarif = $this->input->post('id_tarif');
+		$harga = $this->input->post('harga');
+		$keterangan = $this->input->post('keterangan');
+		
 
 		$data = array(
 			'lapangan' =>$lapangan,
-			'id_tarif' =>$tarif,
+			'harga' =>$harga,
+			'keterangan' => $keterangan,
 		);
 		$this->m_admin->update_lapangan($id,$data);
 		redirect('admin/lapangan','refresh');
