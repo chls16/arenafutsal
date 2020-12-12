@@ -88,23 +88,23 @@
 							</ul>
 						</div>
 						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped">
+							<table id="example1" class="table table-bordered ">
 								<thead>
-									<tr>
-										<th width="15px">No</th>
-										<th >Nama Lapangan</th>
-										<th>Tarif</th>
-										<th>Waktu</th>										
+									<tr >
+										<th style="text-align: center;" width="10px">No</th>
+										<th style="text-align: center;" width="100px">Nama Lapangan</th>
+										<th style="text-align: center;" width="75px">Harga siang</th>
+										<th style="text-align: center;" width="75px">Harga Malam</th>										
 									</tr>
 								</thead>
 								<tbody>
 									<?php $no = 1; ?>
 									<?php foreach ($lapangan as $data){?>
 										<tr>
-											<td><?php  echo $no++; ?></td>
-											<td><?php echo $data->lapangan ?></td>
-											<td><?php echo $data->harga ?></td>
-											<td><?php echo $data->keterangan ?></td>							
+											<td style="text-align: center;" ><?php  echo $no++; ?></td>
+											<td style="text-align: center;"><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="300px" height="200px"><?php echo $data->lapangan ?></td>
+											<td style="text-align: center;"><?php echo $data->harga_siang ?></td>
+											<td style="text-align: center;"><?php echo $data->harga_malam ?></td>							
 										</tr>
 									<?php } ?>
 								</tbody>
