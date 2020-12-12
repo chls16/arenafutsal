@@ -87,42 +87,58 @@
 										<input type="hidden" name="id_users" value="<?=$key->id ?>">
 										<input type="hidden" name="telepon" value="<?=$key->telepon ?>">
 									
-
-									<div class="col-sm-12">
+										<div class="col-sm-12">
 											<label>Tanggal</label>
 											<div class="form-group row">
 												<div class="col-xs-6">
 													<div class="datepicker-wrap">
-														<input name="tanggal_booking" type="text" class="input-text full-width" placeholder="Tanggal" />
+														<input name="tanggal_booking" type="text" class="input-text full-width" placeholder="Tanggal" >
 													</div>
 												</div>
 											</div>
 										</div>
 
-
-									<div class="col-sm-12">
-											<label>Lapangan</label>
-												<div class="selector">
-														<select class="full-width" name="lapangan" required>
-															<option value="">Pilih Lapangan</option>
-															<option value="1">Sintetis</option>
-															<option value="2">Taraflex</option>
-															
-														</select>
-									</div>
-								</div>
-
-									<div class="col-sm-12">
-										 <label>Waktu</label>
-											<div class="selector">
-														<select class="full-width" name="keterangan" required>
-															<option value="">Pilih Waktu</option>
-															<option value="1">Siang</option>
-															<option value="2">Malam</option>
-															
-														</select>
+										<div class="col-sm-12">
+											<label>Jam</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<div class="">
+														<input name="jam_mulai"  type="time" class="input-text full-width" placeholder="Jam">
 													</div>
-									</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-sm-12">
+											<label>Durasi</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<input type="number" name="durasi" class="input-text" placeholder="Durasi">
+												</div>
+											</div>
+										</div>
+
+										<div class="col-sm-12">
+											<label>Lapangan</label>
+											<div class="selector">
+												<select class="full-width" name="lapangan" required>
+													<option value="">Pilih Lapangan</option>
+													<option value="1">Sintetis</option>
+													<option value="2">Taraflex</option>		
+												</select>
+											</div>
+										</div>
+
+										<div class="col-sm-12">
+											<label>Waktu</label>
+											<div class="selector">
+												<select class="full-width" name="keterangan" required>
+													<option value="">Pilih Waktu</option>
+													<option value="1">Siang</option>
+													<option value="2">Malam</option>
+												</select>
+											</div>
+										</div>
 									
 									</div>
 								<div class="form-group row">
