@@ -33,9 +33,9 @@
 										<tr>
 											<th width="15px">No</th>
 											<th >Gambar</th>
-											<th >Nama Lapangan</th>
-											<th>Tarif</th>
-											<th>Keterangan</th>
+											<th>Nama Lapangan</th>
+											<th>Harga Siang</th>
+											<th>Harga Malam</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -46,8 +46,8 @@
 											<td><?php  echo $no++; ?></td>
 											<td><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="150px" height="100px"></td>
 											<td><?php echo $data->lapangan ?></td>
-											<td><?php echo $data->harga ?></td>
-											<td><?php echo $data->keterangan ?></td>
+											<td><?php echo $data->harga_siang ?></td>
+											<td><?php echo $data->harga_malam ?></td>
 											<td>
 												<a type="button" href="<?php echo base_url('admin/lapangan/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
 												<a type="button" href="<?php echo base_url('admin/lapangan/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->lapangan ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>
