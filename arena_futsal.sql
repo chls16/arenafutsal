@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2020 pada 09.52
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.33
+-- Waktu pembuatan: 12 Des 2020 pada 13.54
+-- Versi server: 10.3.16-MariaDB
+-- Versi PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -80,23 +81,19 @@ CREATE TABLE `lapangan` (
   `id` int(11) NOT NULL,
   `img` varchar(100) NOT NULL,
   `lapangan` varchar(255) NOT NULL,
-  `harga` int(12) NOT NULL,
-  `keterangan` enum('Siang','Malam') NOT NULL
+  `harga_siang` int(12) NOT NULL,
+  `harga_malam` int(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `lapangan`
 --
 
-INSERT INTO `lapangan` (`id`, `img`, `lapangan`, `harga`, `keterangan`) VALUES
-(1, 'st.jpg', 'Sintetis 1', 60000, 'Siang'),
-(2, 'st.jpg', 'Sintetis 2', 60000, 'Siang'),
-(3, 'tr.jpg', 'Taraflex 1', 75000, 'Siang'),
-(4, 'tr.jpg', 'Taraflex 2', 75000, 'Siang'),
-(5, 'st.jpg', 'Sintetis 1', 75000, 'Malam'),
-(6, 'st.jpg', 'Sintetis 2', 75000, 'Malam'),
-(7, 'tr.jpg', 'Taraflex 1', 90000, 'Malam'),
-(8, 'tr.jpg', 'Taraflex 2', 90000, 'Malam');
+INSERT INTO `lapangan` (`id`, `img`, `lapangan`, `harga_siang`, `harga_malam`) VALUES
+(1, 'st.jpg', 'Sintetis 1', 60000, 75000),
+(2, 'st.jpg', 'Sintetis 2', 60000, 75000),
+(3, 'tr.jpg', 'Taraflex 1', 75000, 90000),
+(4, 'tr.jpg', 'Taraflex 2', 75000, 90000);
 
 -- --------------------------------------------------------
 
