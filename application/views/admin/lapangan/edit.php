@@ -47,6 +47,15 @@
 					</div>
 						<div class="box-body">
 							<div class="form-group">
+								<label>Foto Lapangan</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-image"></i>
+									</div>
+									<input name="img" type="file" class="form-control" value="<?php $data->img ?>" required />
+								</div>
+							</div>
+							<div class="form-group">
 								<label>Nama Lapangan</label>
 								<div class="input-group">
 									<div class="input-group-addon">

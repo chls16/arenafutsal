@@ -40,28 +40,23 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Harga Lapangan</label>
+								<label>Harga Siang</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-money"></i>
 									</div>
-									<input name="harga" type="text" class="form-control" placeholder="Harga" required/>
+									<input name="harga_siang" type="text" class="form-control" placeholder="Harga Siang" required/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Keterangan</label>
+								<label>Harga Malam</label>
 								<div class="input-group">
 									<div class="input-group-addon">
-										<i class="fa fa-clock-o"></i>
+										<i class="fa fa-money"></i>
 									</div>
-									<div class="col-md-10">
-                                    <select class="form-control" name="keterangan"  required/>
-                                        <option disabled selected value>- Pilih Waktu -</option>
-                                        <option value="Siang">Siang</option>
-                                        <option value="Malam">Malam</option>
-                                    </select>
-                                	</div>
+									<input name="harga_malam" type="text" class="form-control" placeholder="Harga Malam" required/>
 								</div>
+							</div>
 							</div>
 							<input type="submit" class="btn btn-primary" />
 						</div>
