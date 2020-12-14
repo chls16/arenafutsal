@@ -123,19 +123,11 @@
 											<div class="selector">
 												<select class="full-width" name="lapangan" required>
 													<option value="">Pilih Lapangan</option>
-													<option value="1">Sintetis</option>
-													<option value="2">Taraflex</option>		
-												</select>
-											</div>
-										</div>
-
-										<div class="col-sm-12">
-											<label>Waktu</label>
-											<div class="selector">
-												<select class="full-width" name="keterangan" required>
-													<option value="">Pilih Waktu</option>
-													<option value="1">Siang</option>
-													<option value="2">Malam</option>
+													<?php
+                                    				foreach($lapangan as $row){
+                                        			echo "<option style='text-transform:capitalize;' value='$row->id'>$row->lapangan</option>";
+				                                    }
+				                                    ?>		
 												</select>
 											</div>
 										</div>

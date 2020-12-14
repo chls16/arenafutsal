@@ -102,7 +102,7 @@
 									<?php foreach ($lapangan as $data){?>
 										<tr>
 											<td style="text-align: center;" ><?php  echo $no++; ?></td>
-											<td style="text-align: center;"><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="300px" height="200px"><?php echo $data->lapangan ?></td>
+											<td style="text-align: center;"><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="300px" height="200px">  <?php echo $data->lapangan ?></td>
 											<td style="text-align: center;"><?php echo $data->harga_siang ?></td>
 											<td style="text-align: center;"><?php echo $data->harga_malam ?></td>							
 										</tr>
