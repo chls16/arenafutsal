@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Des 2020 pada 13.54
+-- Waktu pembuatan: 17 Des 2020 pada 12.26
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -74,6 +74,18 @@ INSERT INTO `customer` (`id`, `id_users`, `name`, `noid`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `detail_transaksi`
+--
+
+CREATE TABLE `detail_transaksi` (
+  `id` int(11) NOT NULL,
+  `id_transaksi` int(11) NOT NULL,
+  `id_lapangan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `lapangan`
 --
 
@@ -125,6 +137,20 @@ INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `transaksi`
+--
+
+CREATE TABLE `transaksi` (
+  `id` int(11) NOT NULL,
+  `tgl_bayar` date NOT NULL,
+  `id_booking` int(11) NOT NULL,
+  `total_bayar` int(11) NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `users`
 --
 
@@ -169,6 +195,12 @@ ALTER TABLE `customer`
   ADD KEY `id_users` (`id_users`);
 
 --
+-- Indeks untuk tabel `detail_transaksi`
+--
+ALTER TABLE `detail_transaksi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `lapangan`
 --
 ALTER TABLE `lapangan`
@@ -180,6 +212,12 @@ ALTER TABLE `lapangan`
 ALTER TABLE `tarif`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_lapangan` (`id_lapangan`);
+
+--
+-- Indeks untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `users`
@@ -205,6 +243,12 @@ ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT untuk tabel `detail_transaksi`
+--
+ALTER TABLE `detail_transaksi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `lapangan`
 --
 ALTER TABLE `lapangan`
@@ -215,6 +259,12 @@ ALTER TABLE `lapangan`
 --
 ALTER TABLE `tarif`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
