@@ -11,8 +11,11 @@
 			}
 		}
 
-		function jml_seat(){
-			return $this->db->query('SELECT T.id,T.seat_qty FROM transportation T JOIN rute R WHERE R.id_transportation=1')->result();
+		function lapangan_free(){
+			$this->db->select('*');
+			$this->db->from('lapangan a');
+			$this->db->
+			return $this->db->get();
 		}
 		
 		function daftar($data)
