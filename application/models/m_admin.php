@@ -16,9 +16,14 @@ Class M_admin extends CI_Model
 		return $this->db->query('SELECT COUNT(*) as jumlah FROM lapangan;')->result();
 	}
 
-	
-
-	
+	function tampil_payment(){
+		$this->db->select('*');
+		$this->db->FROM('transaksi a');
+		$this->db->join('detail_transaksi b', 'a.id=b.id_transaksi', 'Left');
+		
+		$data=$this->db->get();
+		return $data->result();
+	}	
 
 	function tampil_user(){
 		return $this->db->get('users')->result();	
