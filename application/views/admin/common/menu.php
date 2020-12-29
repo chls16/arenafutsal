@@ -51,7 +51,7 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-						<li><a href="#"><i class="fa fa-credit-card"></i> Payment</a></li>
+						<li><a href="<?php echo base_url(); ?>admin/payment"><i class="fa fa-credit-card"></i> Payment</a></li>
 					</ul>
 				</li>
 			</li>
