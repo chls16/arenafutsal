@@ -29,7 +29,7 @@
 						<li><a href="<?php echo base_url(); ?>admin/members"><i class="fa fa-user"></i> User</a></li>
 					</ul>
 				</li>
-				<li class="treeview">
+				<!-- <li class="treeview">
 					<a href="#">
 						<i class="fa fa-plus"></i> <span>Create Data</span>
 						<span class="pull-right-container">
@@ -42,7 +42,7 @@
 						<li><a href="<?php echo base_url(); ?>admin/airport/add"><i class="fa fa-building-o"></i> Airport</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/rute/add"><i class="fa fa-road"></i> Rute</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li class="treeview">
 					<a href="#">
 						<i class="fa fa-check"></i> <span>Confirmation</span>
