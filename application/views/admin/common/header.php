@@ -1,6 +1,6 @@
 <header class="main-header">
 	<a href="<?php echo base_url(); ?>admin/dashboard" class="logo">
-		<span class="logo-mini"><b>T</b>OM</span>
+		<span class="logo-mini"><b>A</b>F</span>
 		<span class="logo-lg"><img src="<?php echo base_url(); ?>gudang/images/arena.png" width="180px" style="margin: 1px;padding: 0px color:white; alt="Travelo HTML5 Template" /></span>
 					
 				</a>
