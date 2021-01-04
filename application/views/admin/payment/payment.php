@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>lapangan</title>
+	<title>Payment</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
