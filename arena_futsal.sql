@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jan 2021 pada 16.01
+-- Waktu pembuatan: 04 Jan 2021 pada 16.49
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -78,9 +78,9 @@ CREATE TABLE `status` (
 
 CREATE TABLE `transaksi` (
   `id` int(12) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_user` int(12) NOT NULL,
   `id_jadwal` int(12) NOT NULL,
-  `atas_nama` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
