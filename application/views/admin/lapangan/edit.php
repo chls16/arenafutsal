@@ -61,35 +61,28 @@
 									<div class="input-group-addon">
 										<i class="fa fa-soccer-ball-o"></i>
 									</div>
-									<input name="lapangan" type="text" class="form-control" placeholder="Harga" value="<?= $data->lapangan ?>" required/>
+									<input name="lapangan" type="text" class="form-control" placeholder="Nama Lapangan" value="<?= $data->lapangan ?>" required/>
 								</div>
 							</div>
 							<div class="form-group">
-								<label>Tarif</label>
+								<label>Harga Siang</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-money"></i>
 									</div>
-									<input name="harga" type="text" class="form-control" value="<?= $data->harga ?>"  placeholder="Harga" required/>
+									<input name="harga_siang" type="text" class="form-control" value="<?= $data->harga_siang ?>"  placeholder="Harga Siang" required/>
 								</div>
-								<?php } ?>
 							</div>
 							<div class="form-group">
-								<label>Keterangan</label>
+								<label>Harga Malam</label>
 								<div class="input-group">
 									<div class="input-group-addon">
-										<i class="fa fa-soccer-ball-o"></i>
+										<i class="fa fa-money"></i>
 									</div>
-									
-                                    <select class="form-control" name="keterangan"  type="text" class="form-control" placeholder="Harga" value="<?= $data->keterangan ?>" required/>
-          
-                                        <option value="Siang">Siang</option>
-                                        <option value="Malam">Malam</option>
-                                    </select>
-									</div>
-									  <div class="col-md-10">
+									<input name="harga_malam" type="text" class="form-control" value="<?= $data->harga_malam ?>"  placeholder="Harga Malam" required/>
 								</div>
 							</div>
+						<?php } ?>
 						<input type="submit" class="btn btn-primary" />
 					</div>
 				</form>

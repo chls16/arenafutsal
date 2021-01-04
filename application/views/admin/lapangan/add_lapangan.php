@@ -57,8 +57,8 @@
 									<input name="harga_malam" type="text" class="form-control" placeholder="Harga Malam" required/>
 								</div>
 							</div>
-							</div>
 							<input type="submit" class="btn btn-primary" />
+							</div>
 						</div>
 					</div>
 				</section>
