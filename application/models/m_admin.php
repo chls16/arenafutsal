@@ -19,7 +19,9 @@ Class M_admin extends CI_Model
 	function tampil_payment(){
 		$this->db->select('*');
 		$this->db->FROM('transaksi a');
-		$this->db->join('detail_transaksi b', 'a.id=b.id_transaksi', 'Left');
+		$this->db->join('users b', 'a.id_user=b.id', 'Left');
+		$this->db->join('jadwal c','a.id_jadwal=c.id','Left');
+		$this->db->join('status d','a.status=d.id','left');
 		
 		$data=$this->db->get();
 		return $data->result();
