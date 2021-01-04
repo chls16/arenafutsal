@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Des 2020 pada 12.26
+-- Waktu pembuatan: 04 Jan 2021 pada 16.01
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -25,62 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `booking`
+-- Struktur dari tabel `jadwal`
 --
 
-CREATE TABLE `booking` (
-  `id` int(10) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `tanggal_booking` timestamp NOT NULL DEFAULT current_timestamp(),
-  `id_lapangan` int(11) NOT NULL,
-  `status` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `booking`
---
-
-INSERT INTO `booking` (`id`, `id_user`, `tanggal_booking`, `id_lapangan`, `status`) VALUES
-(1, 1, '2018-02-28 01:50:54', 0, 0),
-(2, 2, '2018-02-28 01:50:54', 0, 0),
-(3, 3, '2018-02-28 02:10:04', 0, 0),
-(4, 4, '2018-02-28 02:52:27', 0, 0),
-(5, 5, '2018-02-28 02:52:27', 0, 0);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `customer`
---
-
-CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
-  `id_users` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `noid` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `customer`
---
-
-INSERT INTO `customer` (`id`, `id_users`, `name`, `noid`) VALUES
-(1, 4, 'ilham', '213123213'),
-(2, 4, 'nopia', '3213123'),
-(3, 4, 'siti', '2321320'),
-(4, 4, 'sinop', '30103012301'),
-(5, 4, 'sinoptu', '132123121240');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `detail_transaksi`
---
-
-CREATE TABLE `detail_transaksi` (
-  `id` int(11) NOT NULL,
-  `id_transaksi` int(11) NOT NULL,
-  `id_lapangan` int(11) NOT NULL
+CREATE TABLE `jadwal` (
+  `id` int(12) NOT NULL,
+  `hari` varchar(12) NOT NULL,
+  `jam` varchar(5) NOT NULL,
+  `harga` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -90,7 +42,7 @@ CREATE TABLE `detail_transaksi` (
 --
 
 CREATE TABLE `lapangan` (
-  `id` int(11) NOT NULL,
+  `id` int(12) NOT NULL,
   `img` varchar(100) NOT NULL,
   `lapangan` varchar(255) NOT NULL,
   `harga_siang` int(12) NOT NULL,
@@ -110,29 +62,13 @@ INSERT INTO `lapangan` (`id`, `img`, `lapangan`, `harga_siang`, `harga_malam`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tarif`
+-- Struktur dari tabel `status`
 --
 
-CREATE TABLE `tarif` (
-  `id` int(11) NOT NULL,
-  `id_lapangan` int(11) NOT NULL,
-  `harga` varchar(13) NOT NULL,
-  `keterangan` enum('Siang','Malam') NOT NULL
+CREATE TABLE `status` (
+  `id` int(12) NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tarif`
---
-
-INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`, `keterangan`) VALUES
-(1, 1, '60000', 'Siang'),
-(2, 2, '60000', 'Siang'),
-(3, 3, '75000', 'Siang'),
-(4, 4, '75000', 'Siang'),
-(5, 1, '75000', 'Malam'),
-(6, 2, '75000', 'Malam'),
-(7, 3, '90000', 'Malam'),
-(8, 4, '90000', 'Malam');
 
 -- --------------------------------------------------------
 
@@ -141,10 +77,10 @@ INSERT INTO `tarif` (`id`, `id_lapangan`, `harga`, `keterangan`) VALUES
 --
 
 CREATE TABLE `transaksi` (
-  `id` int(11) NOT NULL,
-  `tgl_bayar` date NOT NULL,
-  `id_booking` int(11) NOT NULL,
-  `total_bayar` int(11) NOT NULL,
+  `id` int(12) NOT NULL,
+  `id_user` int(12) NOT NULL,
+  `id_jadwal` int(12) NOT NULL,
+  `atas_nama` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -155,13 +91,13 @@ CREATE TABLE `transaksi` (
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id` int(12) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `username` varchar(32) NOT NULL,
   `telepon` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
-  `level` int(11) NOT NULL
+  `level` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -179,25 +115,9 @@ INSERT INTO `users` (`id`, `nama`, `email`, `username`, `telepon`, `password`, `
 --
 
 --
--- Indeks untuk tabel `booking`
+-- Indeks untuk tabel `jadwal`
 --
-ALTER TABLE `booking`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_user` (`id_user`),
-  ADD UNIQUE KEY `id_user_2` (`id_user`),
-  ADD KEY `id_lapangan` (`id_lapangan`);
-
---
--- Indeks untuk tabel `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_users` (`id_users`);
-
---
--- Indeks untuk tabel `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
+ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -207,11 +127,10 @@ ALTER TABLE `lapangan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tarif`
+-- Indeks untuk tabel `status`
 --
-ALTER TABLE `tarif`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_lapangan` (`id_lapangan`);
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `transaksi`
@@ -231,46 +150,34 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `booking`
+-- AUTO_INCREMENT untuk tabel `jadwal`
 --
-ALTER TABLE `booking`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT untuk tabel `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT untuk tabel `detail_transaksi`
---
-ALTER TABLE `detail_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `jadwal`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `lapangan`
 --
 ALTER TABLE `lapangan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tarif`
+-- AUTO_INCREMENT untuk tabel `status`
 --
-ALTER TABLE `tarif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `status`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
