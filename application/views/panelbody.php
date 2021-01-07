@@ -42,7 +42,7 @@
                 <a href="<?php echo base_url(); ?>"><b>Home</b></a>
               </li>
               <li class="menu-item-has-children">
-                <a href="<?php echo base_url(); ?>Home"><b>Lapangan</b></a>
+                <a href="<?php echo base_url(); ?>Lapangan"><b>Lapangan</b></a>
               </li>
               <li class="menu-item-has-children">
                 <a href="<?php echo base_url(); ?>Booking"><b>Booking</b></a>
