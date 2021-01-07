@@ -22,6 +22,7 @@ Class M_admin extends CI_Model
 		$this->db->join('users b', 'a.id_user=b.id', 'Left');
 		$this->db->join('jadwal c','a.id_jadwal=c.id','Left');
 		$this->db->join('status d','a.status=d.id','left');
+		$this->db->join('lapangan e','a.id_lapangan=e.id','left');
 		
 		$data=$this->db->get();
 		return $data->result();

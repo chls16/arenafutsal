@@ -11,7 +11,7 @@ class Payment extends CI_Controller {
 
 	public function index()
 	{
-		$data['lapangan']=$this->m_admin->tampil_payment();
+		$data['payment']=$this->m_admin->tampil_payment();
 		// $data['jairport']=$this->db->query('SELECT COUNT(*) FROM airport A JOIN lapangan D WHERE A.id_lapangan=D.id AND D.id=4');
 		$this->load->view('admin/payment/payment',$data);
 	}

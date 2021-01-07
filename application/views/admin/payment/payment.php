@@ -33,22 +33,25 @@
 											<th>Nama</th>
 											<th>Lapangan</th>
 											<th>Jam Booking</th>
+											<th>Durasi</th>
 											<th>Bukti Booking</th>
 											<th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
 										<?php $no = 1; ?>
-										<?php foreach ($lapangan as $data){?>
+										<?php foreach ($payment as $data){?>
 										<tr>
 											<td><?php  echo $no++; ?></td>
-											<td><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="150px" height="100px"></td>
+											<td><?php echo $data->tgl_transaksi ?></td>
+											<td><?php echo $data->nama ?></td>
 											<td><?php echo $data->lapangan ?></td>
-											<td><?php echo $data->harga_siang ?></td>
-											<td><?php echo $data->harga_malam ?></td>
+											<td><?php echo $data->jam_main.'.00' ?></td>
+											<td><?php echo $data->durasi.' jam' ?></td>
+											<td></td>
 											<td>
-												<a type="button" href="<?php echo base_url('admin/lapangan/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
-												<a type="button" href="<?php echo base_url('admin/lapangan/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->lapangan ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>
+												<a type="button" href="<?php echo base_url('admin/payment/edit/'.$data->id) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a>
+												<a type="button" href="<?php echo base_url('admin/payment/del/'.$data->id) ?>"  onclick="return confirm('Delete <?=$data->lapangan ?> ?');" class="btn btn-default btn-sm"><span class="fa fa-trash"> Delete</span></a>
 											</td>
 											<td></td>
 										</tr>
