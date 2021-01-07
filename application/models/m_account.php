@@ -11,12 +11,12 @@
 			}
 		}
 
-		// function lapangan_free(){
-		// 	$this->db->select('*');
-		// 	$this->db->from('lapangan a');
-		// 	$this->db->
-		// 	return $this->db->get();
-		// }
+		function jadwal_lapangan(){
+			$this->db->select('*');
+			$this->db->from('transaksi a');
+			// $this->db->
+			return $this->db->get();
+		}
 		
 		function daftar($data)
 		{
