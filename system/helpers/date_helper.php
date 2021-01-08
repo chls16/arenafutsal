@@ -67,7 +67,7 @@ if ( ! function_exists('now'))
 			$timezone = config_item('time_reference');
 		}
 
-		if ($timezone === 'local' OR $timezone === date_default_timezone_get())
+		if ($timezone === 'local' OR $timezone === date_default_timezone_set("Asia/Jakarta"))
 		{
 			return time();
 		}
