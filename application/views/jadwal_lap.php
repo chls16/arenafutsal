@@ -66,7 +66,7 @@
 								<h2 class="box-title">Payment</h2>
 
 							</div>
-							<div class="box-body">
+							<div class="box-body" style="overflow-x:auto;">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
 										<tr>
@@ -85,7 +85,30 @@
 									</thead>
 									<tbody>
 										<th><?php echo $tanggal. '<br>'; ?></th>
-										<th><?php echo date('d-m-Y') ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
+										<th><?php ?></th>
 									</tbody>
 								</table>
 							</div>
