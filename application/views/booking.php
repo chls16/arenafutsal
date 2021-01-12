@@ -36,6 +36,8 @@
 	
 	<!-- Responsive Styles -->
 	<link rel="stylesheet" href="<?=base_url() ?>gudang/css/responsive.css">
+
+
 </head>
 <body>
 		<div class="page-title-container style4">
@@ -86,6 +88,8 @@
 										</div>
 										<input type="hidden" name="id_users" value="<?=$key->id ?>">
 										<input type="hidden" name="telepon" value="<?=$key->telepon ?>">
+
+
 									
 										<div class="col-sm-12">
 											<label>Tanggal</label>
@@ -99,40 +103,73 @@
 										</div>
 
 										<div class="col-sm-12">
+											<label>Lapangan</label>
+											<div class="selector">
+												<select class="full-width" name="lapangan" id="lapangan" class="lapangan" required>
+													<option value="">Pilih Lapangan</option>
+													<?php
+                                    				foreach($lapangan as $row):?>
+				    							<option value="<?php echo $row->id_lapangan;?>"><?php echo $row->lapangan;?></option>
+				    							<?php endforeach;?>
+												</select>
+											</div>
+										</div>
+
+
+											<div class="col-sm-12">
 											<label>Jam</label>
 											<div class="form-group row">
 												<div class="col-xs-6">
 													<div class="">
-														<input name="jam_mulai"  type="time" class="input-text full-width" placeholder="Jam">
+														<input name="jam_mulai" id="jam_mulai" type="time" class="input-text full-width" placeholder="Jam">
 													</div>
 												</div>
 											</div>
 										</div>
 
+
+											<div class="col-sm-12">
+											<label>Harga Per Jam</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<div class="">
+												<select class="form-control" id="harga" name="harga" required>
+				    						<option value="">No Selected</option>
+											    </select>
+											</div>
+										</div>
+										</div>
+									</div>
+
+
+										
 										<div class="col-sm-12">
 											<label>Durasi</label>
 											<div class="form-group row">
 												<div class="col-xs-6">
-													<input type="number" name="durasi" class="input-text" placeholder="Durasi">
+													<input type="number" name="durasi" id="durasi" class="input-text" placeholder="Durasi">
 												</div>
 											</div>
 										</div>
+										
 
-										<div class="col-sm-12">
-											<label>Lapangan</label>
-											<div class="selector">
-												<select class="full-width" name="lapangan" required>
-													<option value="">Pilih Lapangan</option>
-													<?php
-                                    				foreach($lapangan as $row){
-                                        			echo "<option style='text-transform:capitalize;' value='$row->id'>$row->lapangan</option>";
-				                                    }
-				                                    ?>		
-												</select>
+										
+
+									<div class="col-sm-12">
+											<label>Total Harga</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+											<input type="number" class="form-control" id="total_harga" name="total_harga" required>
+				    						
+												</div>
 											</div>
+										</div>
 										</div>
 									
 									</div>
+
+
+
 								<div class="form-group row">
 										<div class="col-sm-6 col-md-5">
 											<button type="submit" class="full-width btn-large">BOOKING</button>
@@ -254,6 +291,47 @@
 	<!-- load page Javascript -->
 	<script type="text/javascript" src="<?=base_url() ?>gudang/js/theme-scripts.js"></script>
 	<script type="text/javascript" src="<?=base_url() ?>gudang/js/scripts.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <script>
+
+        $("#jam_mulai").change(function(){
+
+            // variabel dari nilai combo box kendaraan
+            var id_lapangan= $("#lapangan").val();
+            var jam= $("#jam_mulai").val();
+
+            // Menggunakan ajax untuk mengirim dan dan menerima data dari server
+            $.ajax({
+                url : "<?php echo base_url();?>booking/get_harga",
+                method : "POST",
+                data : {id_lapangan:id_lapangan,jam:jam},
+                async : false,
+                dataType : 'json',
+                success: function(data){
+                    var html = '';
+                    var i;
+
+                    for(i=0; i<data.length; i++){
+                        html += '<option value='+data[i].harga+'>'+data[i].harga+'</option>';
+                    }
+                    $('#harga').html(html);
+
+                }
+            });
+        });
+
+
+      $("#durasi").change(function(){
+      	//alert("test");
+            var harga= document.getElementById('harga').value;
+            var durasi= document.getElementById('durasi').value;
+var total_harga = parseInt(harga)*parseInt(durasi);
+document.getElementById('total_harga').value=total_harga;
+
+      	//alert(total_harga+'|'+harga+'|'+durasi);
+});
+	</script>
 
 </body>
 </html

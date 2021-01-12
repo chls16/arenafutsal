@@ -15,6 +15,15 @@ class Booking extends CI_Controller {
 
       }
 
+
+    public function get_harga(){
+        $id_lapangan=$this->input->post('id_lapangan');
+        $jam=$this->input->post('jam');
+        $data=$this->m_account->get_harga($id_lapangan,$jam);
+        echo json_encode($data);
+    }
+
+
 	public function index(){
 		$user=$this->m_account->getuser($this->session->userdata('id'));
 		$lapangan=$this->m_account->lapangan();

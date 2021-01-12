@@ -23,17 +23,25 @@
 			$this->db->insert('users',$data);
 		}
 
-		function rute(){
-			$this->db->select('rute_from,rute_to');
-			$this->db->distinct('rute_from,rute_to');
-			return $this->db->get('rute')->result();
-		}
+		function get_harga($id_lapangan,$jam)
+		{
+        $this->db->where('id_lapangan', $id_lapangan);
+        $this->db->where('jam', $jam.':00');
+        $this->db->order_by('id', 'ASC');
+        return $this->db->from('harga')
+            ->get()
+            ->result();
+    }
+
+		/*$query = $this->db->get_where('harga', array('lapangan' => $harga));
+		return $query;*/
+	
 
 		function lapangan(){
 			return $this->db->get('lapangan')->result();
 		}
 
-		function transportation(){
+		/*function transportation(){
 			return $this->db->get('transportation')->result();
 		}
 
@@ -56,7 +64,7 @@
 				INNER JOIN lapangan kekota ON kekota.id=ke.id_lapangan
 				INNER JOIN transportation T On T.id=rute.id_transportation
 				WHERE darikota.iso="'.$rute_from.'" AND kekota.iso="'.$rute_to.'" AND depart_at LIKE "'.$depart_at.'%" AND T.seat_qty-(SELECT COUNT(*) FROM reservation WHERE rute_id=rute.id)>='.$seat_qty.'');
-		}
+		}*/
 
 		function booking($id){
 			return $this->db->query('SELECT T.img,T.name as maskapai,rute.id,rute.depart_at,rute.arrival,dari.name as bandarafrom,dari.iso as isofrom,ke.iso as isoto,ke.name as bandarato,darikota.lapangan as darikota,kekota.lapangan as kekota, darikota.iso as dariiso,kekota.iso as keiso,price,T.seat_qty
