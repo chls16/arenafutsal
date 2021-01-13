@@ -46,7 +46,7 @@
 										<th>Rute</th>
 										<!-- <th width="10%">Action</th> -->
 										<?php $no=1; ?>
-									</tr><?php foreach ($reservation as $data){?>
+									</tr><?php foreach ($transaksi as $data){?>
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><?= $data->reservation_code ?></td>

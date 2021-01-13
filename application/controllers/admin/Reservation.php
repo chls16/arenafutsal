@@ -11,7 +11,7 @@ class Reservation extends CI_Controller {
 
 	public function index()
 	{
-		$data['reservation']=$this->m_admin->tampil_reservation();
+		$data['transaksi']=$this->m_admin->tampil_reservation();
 		$this->load->view('admin/reservation/reservation',$data);
 	}
 
