@@ -66,12 +66,11 @@ Class M_admin extends CI_Model
 
 	function tampil_transportation(){
 		return $this->db->get('transportation')->result();
-	}
+	}*/
 
 	function tampil_reservation(){
-		$query = $this->db->query('SELECT R.*,C.id_users,C.name,C.noid,JR.rute_from,JR.rute_to,(select name from airport where JR.rute_from=airport.id) AS mktndol,(select iso from airport where JR.rute_from=airport.id) AS codemkt,(select iso from airport where JR.rute_to=airport.id) AS codebli,(select name from airport where JR.rute_to=airport.id) AS blindol FROM reservation R, customer C JOIN rute JR JOIN airport JA WHERE R.customer_id=C.id AND R.rute_id=JR.id AND JR.rute_from=JA.id ORDER BY reservation_date DESC');
-		return $query->result();
-	}*/
+		return $this->db->get('transaksi')->result();
+	}
 
 	function tampil_lapangan()
 	{
