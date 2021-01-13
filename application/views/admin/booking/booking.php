@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Reservation</title>
+	<title>Booking</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -23,7 +23,7 @@
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">Reservation</h3>
+								<h3 class="box-title">Booking</h3>
 								<div class="box-tools">
 									<div class="input-group input-group-sm" style="width: 150px;">
 										<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -41,9 +41,9 @@
 										<th>No</th>
 										<th>Kode</th>
 										<th>Nama</th>
-										<th>Dipesan</th>
-										<th>Nomor Kursi</th>
-										<th>Rute</th>
+										<th>Lapangan</th>
+										<th>Jam</th>
+										
 										<!-- <th width="10%">Action</th> -->
 										<?php $no=1; ?>
 									</tr><?php foreach ($transaksi as $data){?>

@@ -28,6 +28,11 @@ class Dashboard extends CI_Controller {
 		
 	
 		$data['lapangan']=$this->m_admin->tampil_lapangan();
+		//$this->load->view('admin/dashboard',$data);
+
+		$data['cbooking']=$this->m_admin->cbooking();
+
+		$data['transaksi']=$this->m_admin->tampil_booking();
 		$this->load->view('admin/dashboard',$data);
 	}
 
