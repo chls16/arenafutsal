@@ -24,6 +24,24 @@ class Booking extends CI_Controller {
     }
 
 
+    function booking()
+	{
+		
+		$tanggal_booking = $this->input->post('hari');
+		$jam_mulai = $this->input->post('jam');
+		$total_harga = $this->input->post('harga');
+		
+		$data = array(
+			'hari' => $tanggal_booking,
+			'jam' => $jam_mulai,
+			'harga' => $total_harga,
+
+		);
+		$this->m_account->add_booking($data,'booking');
+		redirect('booking');
+	}
+
+
 	public function index(){
 		$user=$this->m_account->getuser($this->session->userdata('id'));
 		$lapangan=$this->m_account->lapangan();

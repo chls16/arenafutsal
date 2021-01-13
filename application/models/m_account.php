@@ -66,7 +66,7 @@
 				WHERE darikota.iso="'.$rute_from.'" AND kekota.iso="'.$rute_to.'" AND depart_at LIKE "'.$depart_at.'%" AND T.seat_qty-(SELECT COUNT(*) FROM reservation WHERE rute_id=rute.id)>='.$seat_qty.'');
 		}*/
 
-		function booking($id){
+		/*function booking($id){
 			return $this->db->query('SELECT T.img,T.name as maskapai,rute.id,rute.depart_at,rute.arrival,dari.name as bandarafrom,dari.iso as isofrom,ke.iso as isoto,ke.name as bandarato,darikota.lapangan as darikota,kekota.lapangan as kekota, darikota.iso as dariiso,kekota.iso as keiso,price,T.seat_qty
 				FROM `rute` 
 				INNER JOIN airport dari ON rute.rute_from=dari.id
@@ -77,10 +77,10 @@
 				
 				WHERE rute.id='.$id.'');
 		}
-
+*/
 		function add_booking($table, $data){
 			$this->db->set($data);
-			$this->db->insert($table);
+			$this->db->insert('jadwal',$data);
 		}
 
 		function getuser($id){
