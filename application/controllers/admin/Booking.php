@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Reservation extends CI_Controller {
+class booking extends CI_Controller {
 
 	public function __construct()
 	{
@@ -11,8 +11,8 @@ class Reservation extends CI_Controller {
 
 	public function index()
 	{
-		$data['transaksi']=$this->m_admin->tampil_reservation();
-		$this->load->view('admin/reservation/reservation',$data);
+		$data['transaksi']=$this->m_admin->tampil_booking();
+		$this->load->view('admin/booking/booking',$data);
 	}
 
 }

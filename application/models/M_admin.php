@@ -16,6 +16,11 @@ Class M_admin extends CI_Model
 		return $this->db->query('SELECT COUNT(*) as jumlah FROM lapangan;')->result();
 	}
 
+	function cbooking(){
+		return $this->db->query('SELECT COUNT(*) as jumlah FROM transaksi;')->result();
+	}
+
+
 	function tampil_payment(){
 		$this->db->select('*');
 		$this->db->FROM('transaksi a');
@@ -68,7 +73,7 @@ Class M_admin extends CI_Model
 		return $this->db->get('transportation')->result();
 	}*/
 
-	function tampil_reservation(){
+	function tampil_booking(){
 		return $this->db->get('transaksi')->result();
 	}
 

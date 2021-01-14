@@ -30,7 +30,7 @@
 					<div class="col-lg-3 col-xs-6">
 						<div class="small-box bg-red">
 							<div class="inner">
-								<h3><?=$crute[0]->jumlah ?></h3>
+								<h3><?=$cbooking[0]->jumlah ?></h3>
 								<p>Booking</p>
 							</div>
 							<div class="icon">
