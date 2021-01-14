@@ -116,23 +116,46 @@
 										</div>
 
 
+										<div class="col-sm-12" hidden="">
+											<label>Harga Per Jam</label>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<div class="">
+												<select class="form-control" id="harga" name="harga" required>
+				    						<option value="">No Selected</option>
+											    </select>
+											</div>
+										</div>
+										</div>
+									</div>
+
+
 											<div class="col-sm-6">
 											<label>Jam</label>
-											<div class="selector">
-												<select class="full-width" name="jam" id="jam" class="jam" required>
+											<div class="form-group row">
+												<div class="col-xs-6">
+													<div class="">
+														<input name="jam_mulai" id="jam_mulai" type="time" class="input-text full-width" placeholder="Jam">
+													</div>
+												</div>
+											</div>
+
+
+											<!-- <div class="selector">
+												<select class="full-width" name="jam_mulai" id="jam_mulai" required>
 													<option value="">- Pilih Jam -</option>
 													<?php
-													for ($x = 0; $x <24; $x++){
+													for ($x = 8; $x <=24; $x++){
 													if($x < 10): { ?>
-														<option value="<?php echo '0'.$x.'.00';?>"><?php echo '0'.$x.'.00';?></option>
+														<option value="<?php echo '0'.$x.'.00';?>"><?php echo '0'.$x.'.00';?> WIB</option>
 													<?php
 													}else: {?>
-														<option value="<?php echo $x.'.00'?>"><?php echo $x.'.00';?></option>
+														<option value="<?php echo $x.'.00'?>"><?php echo $x.'.00';?> WIB</option>
 											<?php 
 												}endif;
 											} ?>
 												</select>
-											</div>
+											</div> -->
 										</div>
 
 										

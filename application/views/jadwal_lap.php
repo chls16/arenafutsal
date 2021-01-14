@@ -72,7 +72,7 @@
 										<tr>
 											<th>Hari/Tanggal</th>
 											<?php 
-											for ($x = 0; $x <24; $x++){ 
+											for ($x = 8; $x <=24; $x++){ 
 												if($x < 10): { ?>
 											<th><?php echo '0'.$x;?>.00</th>
 											<?php
@@ -85,13 +85,6 @@
 									</thead>
 									<tbody>
 										<th><?php echo $tanggal. '<br>'; ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
 										<th><?php ?></th>
 										<th><?php ?></th>
 										<th><?php ?></th>
