@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jan 2021 pada 00.46
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.2.33
+-- Waktu pembuatan: 14 Jan 2021 pada 19.53
+-- Versi server: 10.3.16-MariaDB
+-- Versi PHP: 7.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -168,9 +169,13 @@ CREATE TABLE `status` (
 
 CREATE TABLE `transaksi` (
   `id` int(12) NOT NULL,
-  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
+  `tgl_transaksi` timestamp NOT NULL DEFAULT current_timestamp(),
   `id_user` int(12) NOT NULL,
-  `id_jadwal` int(12) NOT NULL,
+  `tgl_booking` date NOT NULL,
+  `id_lapangan` int(11) NOT NULL,
+  `jam_booking` varchar(5) NOT NULL,
+  `durasi` int(2) NOT NULL,
+  `total_transaksi` varchar(11) NOT NULL,
   `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
