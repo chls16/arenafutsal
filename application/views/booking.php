@@ -59,7 +59,7 @@
 					<div id="main" class="col-sms-6 col-sm-8 col-md-9">
 						<div class="booking-section travelo-box">
 
-							<form action="<?=base_url(); ?>pesawat/payment" class="booking-form" method="POST">
+							<form action="<?=base_url(); ?>Booking/booking" class="booking-form" method="POST">
 								<div class="person-information">
 									<h2>Informasi Kontak</h2>
 									<?php

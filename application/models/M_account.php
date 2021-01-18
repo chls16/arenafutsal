@@ -78,7 +78,7 @@
 				WHERE rute.id='.$id.'');
 		}
 */
-		function add_booking($table, $data){
+		function add_booking($data){
 			$this->db->set($data);
 			$this->db->insert('transaksi',$data);
 		}

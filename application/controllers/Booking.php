@@ -43,8 +43,9 @@ class Booking extends CI_Controller {
 			'status' => "1",
 
 		);
-		$this->m_account->add_booking($data,'booking');
-		redirect('booking');
+		$this->m_account->add_booking($data);
+		// redirect('Booking');
+		$this->load->view('payment',$data);
 	}
 
 
