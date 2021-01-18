@@ -26,15 +26,21 @@ class Booking extends CI_Controller {
 
     function booking()
 	{
-		
-		$tanggal_booking = $this->input->post('hari');
-		$jam_mulai = $this->input->post('jam');
-		$total_harga = $this->input->post('harga');
-		
+		$id_user = $this->input->post('id_users');
+		$tanggal_booking = $this->input->post('tanggal_booking');
+		$lapangan = $this->input->post('lapangan');
+		$jam_mulai = $this->input->post('jam_mulai');
+		$durasi = $this->input->post('durasi');
+		$total_harga = $this->input->post('total_harga');
+
 		$data = array(
-			'hari' => $tanggal_booking,
-			'jam' => $jam_mulai,
-			'harga' => $total_harga,
+			'id_user' => $id_user,
+			'tgl_booking' => $tanggal_booking,
+			'id_users' => $lapangan,
+			'jam_booking' => $jam_mulai,
+			'durasi' => $durasi,
+			'total_harga' => $total_harga,
+			'status' => "1",
 
 		);
 		$this->m_account->add_booking($data,'booking');
@@ -46,10 +52,13 @@ class Booking extends CI_Controller {
 		$user=$this->m_account->getuser($this->session->userdata('id'));
 		$lapangan=$this->m_account->lapangan();
 
+		//$seat_qty=$this->input->get('seat_qty');
+		// $rute=$this->m_account->booking($id)->result();
 		$data = array(
 			'user' => $user,
 			'lapangan' => $lapangan,
 			'panelbody' =>'booking',
+			// 'rute' =>$rute,
 		);
 		$this->load->view('panelbody', $data);
 	}
