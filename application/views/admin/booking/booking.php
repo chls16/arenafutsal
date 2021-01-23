@@ -39,21 +39,25 @@
 								<tbody>
 									<tr>
 										<th>No</th>
-										<th>Kode</th>
-										<th>Nama</th>
+										<th>Kode Booking</th>
 										<th>Lapangan</th>
-										<th>Jam</th>
+										<th>Tanggal Main</th>
+										<th>Jam Main</th>
+										<th>Durasi</th>
 										
 										<!-- <th width="10%">Action</th> -->
 										<?php $no=1; ?>
 									</tr><?php foreach ($transaksi as $data){?>
 									<tr>
 										<td><?= $no++ ?></td>
-										<td><?= $data->reservation_code ?></td>
-										<td><?= $data->name ?></td>
-										<td><?php echo date_format(date_create($data->reservation_date), 'd M Y H:i');  ?></td>
-										<td><?= $data->seat_code ?></td>
-										<td><?= $data->mktndol ?> (<?= $data->codemkt ?>) - <?= $data->blindol ?> (<?= $data->codebli ?>)</td>
+										<td><?= $data->kode_transaksi ?></td>
+										
+										<td><?= $data->lapangan ?></td>
+										<td><?php echo date_format(date_create($data->tgl_booking), 'd M Y ');  ?></td>
+										<td><?php echo date_format(date_create($data->jam_booking), 'H:i');  ?></td>
+										<td><?= $data->durasi ?></td>
+									
+									
 										<!-- <td> -->
 											<!-- <a href="" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a> -->
 											<!-- <a href="" onclick="return confirm('Delete ?')" class="btn btn-danger btn-sm"><span class="fa fa-trash"> Delete</span></a> -->

@@ -200,46 +200,29 @@
 					<div class="sidebar col-sms-6 col-sm-4 col-md-3">
 						<div class="booking-details travelo-box">
 							<h4>Booking Details</h4>
-							<?php foreach ($rute as $data) {?>
-							<article class="flight-booking-details">
-								<figure class="clearfix">
-									<a title="" href="" class="middle-block"><img class="middle-item" alt="" src="<?=base_url(); ?>gudang/images/logo/<?=$data->img ?>"></a>
-									<div class="travel-title">
-										<h5 class="box-title"><?php echo $data->bandarafrom; ?>(<?php echo $data->isofrom; ?>) - <?php echo $data->bandarato; ?> (<?php echo $data->isoto; ?>)<small><?php echo $data->maskapai; ?></small></h5>
-										<a href="" class="button">EDIT</a>
-									</div>
-								</figure>
-								<div class="details">
-									<div class="constant-column-3 timing clearfix">
-										<div class="check-in">
-											<label>Pergi</label>
-											<span><?php echo date_format(date_create($data->depart_at), 'd M Y');  ?><br /><?php echo date_format(date_create($data->depart_at), 'H:i');  ?></span>
-										</div>
-										<?php 
-										$date1 = new DateTime($data->depart_at);
-										$date2 = new DateTime($data->arrival);
-										$diff = $date1->diff($date2);
-										?>
-										<div class="duration text-center">
-											<i class="soap-icon-clock"></i>
-											<span><?php echo $diff->h.' J '.$diff->i.' menit ' ?></span>
-										</div>
-										<div class="check-out">
-											<label>Tiba</label>
-											<span><?php echo date_format(date_create($data->arrival), 'd M Y');  ?><br /><?php echo date_format(date_create($data->arrival), 'H:i');  ?></span>
-										</div>
-									</div>
-								</div>
-							</article>
-							<?php } ?>
+							
+							<table class="table">
+								<tr>
+									<!--<th>ID</th>
+									<th>TANGGAL TRANSAKSI</th>
+									<th>USER</th>
+									<th>tanggal booking</th>
+									<th>jam booking</th>
+									<th>action</th>
+								</tr>
+								<?php foreach ($detail_booking as $data) {?>
+								<tr>
+									<td><?php echo $data->id_transaksi ?></td>
+									<td><?php echo $data->tgl_transaksi ?></td>
+									<td><?php echo $data->id_users ?></td>
+									<td><?php echo $data->tgl_booking ?></td>
+									<td><?php echo $data->jam_booking ?></td>
+									<td></td>
+								</tr>
+								<?php } ?>
+							</table>
 
-							<h4>Other Details</h4>
-							<dl class="other-details">
-								<dt class="feature">Maskapai :</dt><dd class="value"><?php echo $data->maskapai; ?></dd>
-								<dt class="feature">Harga :</dt><dd class="value"><?php echo $data->price; ?></dd>
-								<dt class="feature">Quantity :</dt><dd class="value"><?=$seat_qty ?></dd>
-								<dt class="total-price">Total Price</dt><dd class="total-price-value"><?php echo $seat_qty * $data->price; ?></dd>
-							</dl>
+							
 						</div>
 
 						<div class="travelo-box contact-box">
@@ -257,7 +240,7 @@
 		</section>
 
 		<footer id="footer">
-			<?php $this->load->view('common/footer'); ?>
+			<?php $this->load->view('common/footer'); ?>-->
 		</footer>
 	</div>
 

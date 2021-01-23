@@ -24,7 +24,7 @@ class Lapangan extends CI_Controller {
 
 	function add_lapangan()
 	{
-		$config['upload_path']          = './gambar/';
+		$config['upload_path']          = './gudang/images/logo/';
 		$config['allowed_types']        = 'png|jpg|PNG';
 		// $config['allowed_types']        = '*';
 		$config['max_size']             = 100;

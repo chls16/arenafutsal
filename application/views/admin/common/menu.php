@@ -23,9 +23,7 @@
 					<ul class="treeview-menu">
 						<li><a href="<?php echo base_url(); ?>admin/lapangan"><i class="fa fa-soccer-ball-o"></i> Lapangan</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/booking"><i class="fa fa-calendar-check-o"></i> Booking Lapangan</a></li>
-						<li><a href="<?php echo base_url(); ?>admin/destinations"><i class="fa fa-clock-o"></i> Waktu Bermain</a></li>
-						<li><a href="<?php echo base_url(); ?>admin/airport"><i class="fa fa-building-o"></i> Airport</a></li>
-						<li><a href="<?php echo base_url(); ?>admin/rute"><i class="fa fa-road"></i> Jam Main</a></li>
+						<li><a href="<?php echo base_url(); ?>admin/destinations"><i class="fa fa-clock-o"></i> Jadwal Main</a></li>
 						<li><a href="<?php echo base_url(); ?>admin/members"><i class="fa fa-user"></i> User</a></li>
 					</ul>
 				</li>

@@ -65,18 +65,32 @@
                     		<div class="booking-confirmation clearfix">
                     			<!-- <i class="soap-icon-recommend icon circle"></i> -->
                     			<div class="message">
-                    				<h4 class="main-message">Pesanan anda sudah kami terima silahkan melakukan pembayaran.</h4><br>
-                    				<p>Kode konfirmasi pesanan adalah <b><?php echo $invoice ?></b></p>
+                    				<h4 class="main-message">Pesanan anda sudah kami terima silahkan melakukan pembayaran dan kirim bukti transfernya.</h4><br>
                     			</div>
                     		</div><br>
                     		<div class="col-md-5" style="padding-left: 0">
                     		<select id="kiebank" name="kiebank" class="input-text full-width"  onchange="myFunction(value)">
                     			<option value="">Pilih Bank</option>
-                    			<option value="Bank : Mandiri<br>Rekening : 132982184982<br>Nama : Tiket Om">Bank Mandiri</option>
-                    			<option value="Bank : BCA<br>Rekening : 13298231982<br>Nama : Tiket Om">Bank BCA</option>
-                    			<option value="Bank : BRI<br>Rekening : 132981232182<br>Nama : Tiket Om">Bank BRI</option>
+                    			<option value="Bank : Mandiri<br>Rekening : 132982184982<br>Nama : Futsal Arena">Bank Mandiri</option>
+                    			<option value="Bank : BCA<br>Rekening : 13298231982<br>Nama : Futsal Arena">Bank BCA</option>
+                    			<option value="Bank : BRI<br>Rekening : 132981232182<br>Nama : Futsal Arena">Bank BRI</option>
                     		</select>
                     		</div>
+                    		
+                    		<div class="box-body" >
+                    		<div class="col-md-5">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-image"></i>
+									</div>
+									<input name="img" type="file" class="form-control" required />
+								</div>
+							</div>
+						</div>
+						
+				
+
                     		<br><br>
                     		<div class="message" style="margin-top:15px;">
                     			<h4 id="bank" class="main-message"></h4> 

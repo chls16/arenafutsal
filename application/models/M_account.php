@@ -83,7 +83,21 @@
 			$this->db->insert('transaksi',$data);
 		}
 
+		function add_buktitf($data){
+			$this->db->set($data);
+			$this->db->insert('transaksi',$data);
+		}
+
 		function getuser($id){
 			return $this->db->query('SELECT * FROM users where id = "'.$id.'"')->result();
+		}
+
+		function view_booking($id){
+			$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->where('id_users',$id);
+		$this->db->order_by('id_transaksi','asc');
+		$query = $this->db->get();
+		return $query->result();
 		}
 	}

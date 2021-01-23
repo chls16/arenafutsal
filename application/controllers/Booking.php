@@ -34,30 +34,33 @@ class Booking extends CI_Controller {
 		$total_harga = $this->input->post('total_harga');
 
 		$data = array(
-			'id_user' => $id_user,
+			'id_users' => $id_user,
 			'tgl_booking' => $tanggal_booking,
-			'id_users' => $lapangan,
+			'id_lapangan' => $lapangan,
 			'jam_booking' => $jam_mulai,
 			'durasi' => $durasi,
-			'total_harga' => $total_harga,
-			'status' => "1",
+			'total_transaksi' => $total_harga,
+			'status_bayar' => "Belum Bayar",
 
 		);
 		$this->m_account->add_booking($data);
-		// redirect('Booking');
+		 //redirect(base_url('payment'), 'refresh');
 		$this->load->view('payment',$data);
 	}
 
 
 	public function index(){
 		$user=$this->m_account->getuser($this->session->userdata('id'));
+		$id_user = $this->session->userdata('id');
 		$lapangan=$this->m_account->lapangan();
+		$detail_booking = $this->m_account->view_booking($id_user);
 
 		//$seat_qty=$this->input->get('seat_qty');
 		// $rute=$this->m_account->booking($id)->result();
 		$data = array(
 			'user' => $user,
 			'lapangan' => $lapangan,
+			'detail_booking' => $detail_booking,
 			'panelbody' =>'booking',
 			// 'rute' =>$rute,
 		);

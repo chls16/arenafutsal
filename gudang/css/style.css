@@ -140,8 +140,8 @@ html {
 
 body {
   font: 75%/150% "Roboto", sans-serif;
-  background-color: #fff;
-  color:  #01b7f2;
+  background-color: #121013;
+  color:  #121013;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: scrollbar;
@@ -173,7 +173,7 @@ span.active, a.active, h2.active, h3.active, h4.active, h5.active, h6.active {
   color: #01b7f2; }
 
 .info-primary, .info-success {
-  color: #fff;
+  color: #121013;
   padding: 2px 5px;
   line-height: 1em; }
 
@@ -187,7 +187,7 @@ span.active, a.active, h2.active, h3.active, h4.active, h5.active, h6.active {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 15px;
   font-weight: normal;
-  color: #fff; }
+  color: #121013; }
 
 h1 {
   font-size: 2em;
@@ -1934,7 +1934,7 @@ blockquote {
   .hover-effect.yellow:after {
     background-color: rgba(255, 255, 40, 0.6); }
   .hover-effect.style1:after {
-    color: #fff;
+    color: #121013;
     background: none;
     content: "\e8ba";
     font-family: "soap-icons";
@@ -2007,7 +2007,7 @@ blockquote {
     height: 32px;
     display: inline-block;
     background: #d9d9d9;
-    color: #fff;
+    color: #121013;
     line-height: 32px;
     font-size: 1.3333em;
     -moz-transition: opacity 0.3s ease-in;

@@ -21,17 +21,11 @@ Class M_admin extends CI_Model
 	}
 
 
-	function tampil_payment(){
-		$this->db->select('*');
-		$this->db->FROM('transaksi a');
-		$this->db->join('users b', 'a.id_user=b.id', 'Left');
-		$this->db->join('jadwal c','a.id_jadwal=c.id','Left');
-		$this->db->join('status d','a.status=d.id','left');
-		$this->db->join('lapangan e','a.id_lapangan=e.id','left');
-		
-		$data=$this->db->get();
-		return $data->result();
-	}	
+	function tampil_transaksi()
+	{
+		$query= $this->db->query('SELECT * FROM transaksi AS t INNER JOIN users AS u ON t.id_users = u.id INNER JOIN lapangan AS l ON l.id_lapangan = t.id_lapangan');
+		return $query->result(); 
+	}
 
 	function tampil_user(){
 		return $this->db->get('users')->result();	
@@ -74,7 +68,12 @@ Class M_admin extends CI_Model
 	}*/
 
 	function tampil_booking(){
-		return $this->db->get('transaksi')->result();
+		$query = $this->db->query('SELECT * FROM transaksi AS t INNER JOIN users AS u ON t.id_users = u.id INNER JOIN lapangan AS l ON l.id_lapangan = t.id_lapangan');
+		return $query->result();
+	}
+
+	function add_status($data){
+    $this->db->insert('status', $data);
 	}
 
 	function tampil_lapangan()
@@ -98,9 +97,9 @@ Class M_admin extends CI_Model
 		$this->db->insert($table,$data);
 	}
 
-	function edit_lapangan($lapangan,$where){
-		return $this->db->get_where($lapangan,$where);
-	}
+	function edit_lapangan($table,$id){
+		$this->db->where('id', $id);
+		return $this->db->get($table,$id); }
 
 	function edit_user($users,$id){
 		return $this->db->get_where($users,$where);
@@ -146,6 +145,11 @@ Class M_admin extends CI_Model
 		$this->db->delete('lapangan');
 	}
 
+	function hapus_transaksi($id){
+		$this->db->where('id', $id);
+		$this->db->delete('transaksi');
+	}
+
 	function hapus_user($id){
 		$this->db->where('id', $id);
 		$this->db->delete('users');
@@ -161,9 +165,18 @@ Class M_admin extends CI_Model
 		$this->db->delete('transportation');
 	}
 
-	function hapus_airport($id){
-		$this->db->where('id', $id);
-		$this->db->delete('airport');
+	function add_buktitf($data){
+			$this->db->set($data);
+			$this->db->insert('transaksi',$data);
+		}
+
+
+	function update_status($data){
+		$this->db->where('id_transaksi', $data['id_transaksi']);
+		$this->db->update('transaksi',$data);
+	}
+	function add_jadwal($data){
+		$this->db->insert('jadwal', $data);
 	}
 }
 ?>
