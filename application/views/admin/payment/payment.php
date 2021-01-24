@@ -62,7 +62,7 @@
 										<td><?= $data->total_transaksi ?></td>
 										<td><img src="<?php echo base_url(); ?>gudang/images/bukti_tf/<?php echo $data->bukti_tf?>" width="150px" height="100px"></td>
 										<td>
-											<?php if($data->status_bayar == "Konfirmasi"){ ?>
+											<?php if($data->status_bayar == "Sudah Bayar"){ ?>
 											<div class="btn-group">
 											<?php echo form_open(base_url('admin/payment/status/'.$data->id_transaksi)); ?>
 											<input type="hidden" name="nama" class="form-control" value="<?php echo $data->nama ?>">
