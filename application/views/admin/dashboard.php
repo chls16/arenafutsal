@@ -40,7 +40,21 @@
 						</div>
 					</div>
 				</div>
-			</div>
+				<div class="col-lg-3 col-xs-6">
+						<div class="small-box bg-blue">
+							<div class="inner">
+								<h3><?=$ctampil_transaksi[0]->jumlah ?></h3>
+								<p>Butuh Konfirmasi</p>
+							</div>
+							<div class="icon">
+								<i class="fa fa-location-arrow"></i>
+							</div>
+							<a href="<?=base_url() ?>admin/Payment" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 		</section>
 	</div>
 	<div class="control-sidebar-bg"></div>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Booking</title>
+	<title>Arena Futsal Kraksaan</title>
 	<?php $this->load->view('admin/common/scatas'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -12,7 +12,7 @@
 		<?php $this->load->view('admin/common/menu'); ?>
 		<div class="content-wrapper">
 			<section class="content-header">
-				<h1>Confirmation</h1>
+				<h1>Jadwal Lapangan</h1>
 				<div class="row">
 					<div class="col-sm-2 col-md-2">
 				 </div>
@@ -23,7 +23,7 @@
 					<div class="col-xs-12">
 						<div class="box">
 							<div class="box-header">
-								<h3 class="box-title">Transaksi</h3>
+								<h3 class="box-title">Jadwal</h3>
 								<div class="box-tools">
 									<div class="input-group input-group-sm" style="width: 150px;">
 										<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -39,30 +39,22 @@
 								<tbody>
 									<tr>
 										<th>No</th>
-										<th>Kode Booking</th>
-										<th>Nama</th>
-										<th>Lapangan</th>
 										<th>Tanggal</th>
 										<th>Jam Main</th>
+										<th>Lapangan</th>
 										<th>Durasi</th>
-										<th>Total</th>
-										<th>Action</th>
 										<!-- <th width="10%">Action</th> -->
 										<?php $no=1; ?>
-									</tr><?php foreach ($payment as $data){?>
+									</tr><?php foreach ($jadwal as $data){?>
 									<tr>
 										<td><?= $no++ ?></td>
-										<td><?= $data->kode_transaksi ?></td>
-										<td><?= $data->nama ?></td>
+										
+										<td><?php echo date_format(date_create($data->tanggal), 'd M Y ');  ?></td>
+										<td><?php echo date_format(date_create($data->jam), 'H:i');  ?></td>
 										<td><?= $data->lapangan ?></td>
-										<td><?php echo date_format(date_create($data->tgl_booking), 'd M Y ');  ?></td>
-										<td><?php echo date_format(date_create($data->jam_booking), 'H:i');  ?></td>
 										<td><?= $data->durasi ?></td>
-										<td><?= $data->total_transaksi?></td>
 										<td><div class="box-header">
-										<a type="button" href="<?php echo base_url('admin/payment/add/'.$data->id_lapangan) ?>" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Konfirmasi </span></a>
-											</td>
-									
+
 										<!-- <td> -->
 											<!-- <a href="" class="btn btn-default btn-sm"><span class="fa fa-pencil"> Edit</span></a> -->
 											<!-- <a href="" onclick="return confirm('Delete ?')" class="btn btn-danger btn-sm"><span class="fa fa-trash"> Delete</span></a> -->

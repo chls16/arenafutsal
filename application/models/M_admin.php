@@ -31,6 +31,10 @@ Class M_admin extends CI_Model
 		return $this->db->get('users')->result();	
 	}
 
+	function ctampil_transaksi(){
+		return $this->db->query('SELECT COUNT(*) as jumlah FROM transaksi;')->result();	
+	}
+
 	/*function tampil_airport($id=''){
 		if($id!=''){
 			$where = ' AND A.id = "'.$id.'"';
@@ -76,6 +80,12 @@ Class M_admin extends CI_Model
     $this->db->insert('status', $data);
 	}
 
+	function tampil_jadwal()
+	{
+		return $this->db->get('jadwal')->result();
+	}
+
+
 	function tampil_lapangan()
 	{
 		return $this->db->get('lapangan')->result();
@@ -85,17 +95,6 @@ Class M_admin extends CI_Model
     $this->db->insert('lapangan', $data);
 	}
 
-	function add_transportation($data){
-    $this->db->insert('transportation', $data);
-	}
-
-	function add_airport($data){
-    $this->db->insert('airport', $data);
-	}
-
-	function add_rute($data,$table){
-		$this->db->insert($table,$data);
-	}
 
 	function edit_lapangan($table,$id){
 		$this->db->where('id', $id);
@@ -103,16 +102,6 @@ Class M_admin extends CI_Model
 
 	function edit_user($users,$id){
 		return $this->db->get_where($users,$where);
-	}
-
-	function edit_airport($table,$id){
-		$query = $this->db->query('SELECT A.*,D.lapangan FROM airport A JOIN lapangan D WHERE A.id='.$id.' AND D.id=A.id_lapangan');
-		return $query;
-	}
-
-	function edit_transportation($table,$id){
-		$this->db->where('id', $id);
-		return $this->db->get($table,$id);
 	}
 
 	function update_lapangan($id,$data){
@@ -123,21 +112,6 @@ Class M_admin extends CI_Model
 	function update_user($id,$data){
 		$this->db->where('id', $id);
 		$this->db->update('users', $data);
-	}
-
-	function update_airport($id,$data){
-		$this->db->where('id', $id);
-		$this->db->update('airport', $data);
-	}
-
-	function update_rute($id,$data){
-		$this->db->where('id', $id);
-		$this->db->update('rute', $data);
-	}
-
-	function update_transportation($id,$data){
-		$this->db->where('id', $id);
-		$this->db->update('transportation', $data);
 	}
 
 	function hapus_lapangan($id){
@@ -153,16 +127,6 @@ Class M_admin extends CI_Model
 	function hapus_user($id){
 		$this->db->where('id', $id);
 		$this->db->delete('users');
-	}
-
-	function hapus_rute($id){
-		$this->db->where('id', $id);
-		$this->db->delete('rute');
-	}
-
-	function hapus_transportation($id){
-		$this->db->where('id', $id);
-		$this->db->delete('transportation');
 	}
 
 	function add_buktitf($data){

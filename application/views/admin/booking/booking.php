@@ -50,7 +50,7 @@
 									</tr><?php foreach ($transaksi as $data){?>
 									<tr>
 										<td><?= $no++ ?></td>
-										<td><?= $data->kode_transaksi ?></td>
+										<td><?= $data->id_transaksi ?></td>
 										
 										<td><?= $data->lapangan ?></td>
 										<td><?php echo date_format(date_create($data->tgl_booking), 'd M Y ');  ?></td>

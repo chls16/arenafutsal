@@ -66,4 +66,37 @@ class Booking extends CI_Controller {
 		);
 		$this->load->view('panelbody', $data);
 	}
+
+	function add_buktitf()
+	{
+		$id = $this->input->post('id');
+		$config['upload_path']          = './gudang/images/bukti_tf/';
+		// $config['allowed_types']        = 'png|jpg|PNG';
+		$config['allowed_types']        = '*';
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
+		$config['max_height']           = 768;	
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload('bukti_tf'))
+		{
+			$bukti_tf = '';
+			$error = array('error' => $this->upload->display_errors());
+			$this->load->view('booking/add_buktitf', $error);
+		}
+		else
+		{
+			$upload_data = $this->upload->data();
+			$data = array('upload_data' => $upload_data);
+			$bukti_tf = $upload_data['file_name'];
+		}
+
+		$data = array(
+			'bukti_tf' => $bukti_tf,
+
+			);
+		$this->m_account->add_buktitf($data,'transaksi');
+		redirect('booking');
+	}
 }

@@ -64,7 +64,9 @@
 											<div class="btn-group">
 											<?php echo form_open(base_url('admin/payment/status/'.$data->id_transaksi)); ?>
 											<input type="hidden" name="tgl_booking" class="form-control" value="<?php echo $data->tgl_booking ?>">
-											<input type="hidden" name="jam_booking" class="form-control" value="<?php echo $data->jam_booking ?>">								
+											<input type="hidden" name="jam_booking" class="form-control" value="<?php echo $data->jam_booking ?>">	
+											<input type="hidden" name="durasi" class="form-control" value="<?php echo $data->durasi ?>">		
+											<input type="hidden" name="lapangan" class="form-control" value="<?php echo $data->lapangan ?>">				
 
 												<button class="btn btn-warning btn-xs"><i class="fa fa-check"></i> Update Status</button>
 												<?php form_close(); ?>

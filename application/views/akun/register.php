@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Page Title -->
-    <title>Register - Tiket Om</title>    
+    <title>Arena Futsal Kraksaan</title>    
     <!-- Theme Styles -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>gudang/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>gudang/css/font-awesome.min.css">

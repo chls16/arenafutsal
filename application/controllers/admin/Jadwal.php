@@ -1,71 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Rute extends CI_Controller{
+class Jadwal extends CI_Controller {
 
-	function __construct(){
-		parent::__construct();		
+	public function __construct()
+	{
+		parent::__construct();
 		$this->load->model('m_admin');
 		$this->m_admin->sesiku();
-
 	}
 
-	function del($id){
-		$this->m_admin->hapus_rute($id);
-		$this->session->set_flashdata('notif','<div class="alert alert-success" role="alert"> Data Berhasil diubah <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-		redirect('admin/rute','refresh');
+	public function index()
+	{
+		$data['jadwal']=$this->m_admin->tampil_jadwal();
+		// $data['jairport']=$this->db->query('SELECT COUNT(*) FROM airport A JOIN lapangan D WHERE A.id_lapangan=D.id AND D.id=4');
+		$this->load->view('admin/jadwal/jadwal',$data);
 	}
-
-	function edit($id){
-		$data['transportation']=$this->m_admin->tampil_transportation();
-		$data['destination']=$this->m_admin->tampil_destination();
-		$arr_data_rute= array();
-		$data_rute = $this->m_admin->tampil_rute($id);
-		foreach($data_rute as $key) {
-			$datasaturute = array();
-			$airport_from = $this->m_admin->tampil_airport($key->rute_from)->row();
-			$airport_to = $this->m_admin->tampil_airport($key->rute_to)->row();
-			$datakotafrom = $this->m_admin->get_airport($airport_from->idkota);
-			$optionfrom = '<option value="">Pilih Bandara</option>';
-			foreach($datakotafrom->result() as $keyy){
-				$optionfrom .= '<option value="'.$keyy->id.'" '.($keyy->id==$key->rute_from?"selected":"").'>'.$keyy->name.' ('.$keyy->iso.')</option>';
-			}
-			$datakotato = $this->m_admin->get_airport($airport_to->idkota);
-			$optionto = '<option value="">Pilih Bandara</option>';
-			foreach($datakotato->result() as $keyy){
-				$optionto .= '<option value="'.$keyy->id.'" '.($keyy->id==$key->rute_to?"selected":"").'>'.$keyy->name.' ('.$keyy->iso.')</option>';
-			}
-			$datasaturute = array(
-				'id' => $key->id,
-				'idkotafrom' => $airport_from->idkota,
-				'idkotato' => $airport_to->idkota,
-				'optionbandarafrom' => $optionfrom,
-				'optionbandarato' => $optionto,
-				'depart_at' => $key->depart_at,
-				'arrival' => $key->arrival,
-				'mangkat_from' => $airport_from->destination,
-				'rute_from' => $airport_from->name,
-				'iso_from' => $airport_from->iso,
-				'mangkat_to' => $airport_to->destination,
-				'rute_to' => $airport_to->name,
-				'iso_to' => $airport_to->iso,
-				'price' => $key->price,
-				'maskapai' => $key->maskapai,
-				'idmaskapai' => $key->id_transportation,
-				'creat_date' => $key->creat_date,
-			);
-			array_push($arr_data_rute, $datasaturute);
-		}
-		$data['rute'] = $arr_data_rute;
-		$this->load->view('admin/rute/edit',$data);
-	}
-
-	function getairport($id){
-		$data = $this->m_admin->get_airport($id);
-		$option = '<option value="">Pilih Bandara</option>';
-		foreach($data->result() as $key){
-			$option .= '<option value="'.$key->id.'">'.$key->name.' ('.$key->iso.')</option>';
-		}
-		echo $option;
-	}
-
 }

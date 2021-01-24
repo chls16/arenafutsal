@@ -84,7 +84,7 @@
 									<div class="input-group-addon">
 										<i class="fa fa-image"></i>
 									</div>
-									<input name="img" type="file" class="form-control" required />
+									<input name="bukti_tf" type="file" class="form-control" required />
 								</div>
 							</div>
 						</div>
