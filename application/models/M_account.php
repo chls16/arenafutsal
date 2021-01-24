@@ -14,7 +14,7 @@
 		function jadwal_lapangan(){
 			$this->db->select('*');
 			$this->db->from('jadwal a');
-			$this->db->join('users b','a.id_user=b.id','left');
+			// $this->db->join('users b','a.id_user=b.id','left');
 			$this->db->order_by('a.tanggal','ACS');
 			return $this->db->get()
 				->result();
