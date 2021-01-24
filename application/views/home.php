@@ -87,15 +87,13 @@
 								<li class="active"><a>JADWAL LAPANGAN</a></li>
 							</ul>
 						</div>
-						<div class="box-body" style="overflow-x:auto;">
+						<div class="box-body">
 							<table id="example1" class="table table-bordered ">
 								<thead>
-									<?php foreach ($jam as $data){ ?>
 									<tr>
 										<th>Hari/Tanggal</th>
-
-										<!-- <?php 
-										for ($x = 8; $x < 24; $x++){ 
+										<?php 
+										for ($x = 8; $x <=24; $x++){ 
 											if($x < 10): { ?>
 										<th><?php echo '0'.$x;?>.00</th>
 										<?php
@@ -103,13 +101,14 @@
 										<th><?php echo $x;?>.00</th>
 										<?php 
 											}endif;
-										} ?> -->
+										} ?>
 									</tr>
 								</thead>
 								<tbody>
 									<?php foreach($jadwal as $data){ ?>
 									<tr>
 										<th><?php echo $tanggal. '<br>'; ?></th>
+										<th><?php echo $data->nama ?></th>
 										<th><?php echo $data->nama ?></th>
 										<th><?php echo $data->nama ?></th>
 										<th><?php echo $data->nama ?></th>
