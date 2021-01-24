@@ -100,4 +100,17 @@
 		$query = $this->db->get();
 		return $query->result();
 		}
+		function view_transaksi($id){
+		$this->db->select('*');
+		$this->db->from('transaksi');
+		$this->db->where('id_transaksi',$id);
+		$this->db->order_by('id_transaksi','asc');
+		$query = $this->db->get();
+		return $query->row();
+		}
+		//edit
+	public function edit($data){
+		$this->db->where('id_transaksi', $data['id_transaksi']);
+		$this->db->update('transaksi',$data);
+	}
 	}
