@@ -11,7 +11,7 @@
 			}
 		}
 
-		function jadwal_lapangan($jam){
+		function jadwal_lapangan(){
 			$this->db->select('*');
 			$this->db->from('jadwal a');
 			$this->db->join('users b','a.id_user=b.id','left');
