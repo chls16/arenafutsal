@@ -139,7 +139,7 @@ class Booking extends CI_Controller {
 			$i = $this->input;
 			$data = array(	'id_transaksi'			=> $id_transaksi,
 							'bukti_tf'			=> $upload_gambar['upload_data']['file_name'],
-							'status_bayar'			=> "Konfirmasi"
+							'status_bayar'			=> "Sudah Bayar"
 						);
 			$this->m_account->edit($data);
 			redirect(base_url('booking'), 'refresh');
