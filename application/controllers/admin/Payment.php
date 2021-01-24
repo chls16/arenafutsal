@@ -37,7 +37,7 @@ class Payment extends CI_Controller {
 	{
 		//update status
 		$data = array(	'id_transaksi'	=> $id,
-						'status_bayar'	=> 'Sudah Bayar'
+						'status_bayar'	=> 'Konfirmasi'
 						);
 			$this->m_admin->update_status($data);
 

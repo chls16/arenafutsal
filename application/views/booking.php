@@ -206,7 +206,7 @@
 										}elseif ($data->status_bayar=='Konfirmasi') { ?>
 											<span class="label label-success"> <i class="fa fa-ticket"></i> <?php echo "Terkonfirmasi </span>";
 										}elseif($data->status_bayar=='Batal') { ?>
-											<span class="label label-danger"> <i class="fa fa-times"></i> <?php echo "Sudah Bayar </span>";
+											<span class="label label-danger"> <i class="fa fa-times"></i> <?php echo "Transaksi Batal </span>";
 										} ?>
 									</td>
 								</tr>
