@@ -96,11 +96,12 @@
 
 		function view_booking($id){
 			$this->db->select('*');
-		$this->db->from('transaksi');
-		$this->db->where('id_users',$id);
-		$this->db->order_by('id_transaksi','asc');
-		$query = $this->db->get();
-		return $query->result();
+			$this->db->from('transaksi a');
+			$this->db->join('lapangan b','a.id_lapangan=b.id_lapangan','left');
+			$this->db->where('id_users',$id);
+			$this->db->order_by('id_transaksi','asc');
+			$query = $this->db->get();
+			return $query->result();
 		}
 		function view_transaksi($id){
 		$this->db->select('*');
