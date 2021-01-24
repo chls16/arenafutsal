@@ -15,10 +15,7 @@
 			$this->db->select('*');
 			$this->db->from('jadwal a');
 			$this->db->join('users b','a.id_user=b.id','left');
-			$this->db->join('lapangan c','a.lapangan=c.id_lapangan','left');
-			$this->db->where('a.lapangan','Sintetis 1');
-			// $this->db->where('a.jam',$jam);
-
+			$this->db->order_by('a.tanggal','ACS');
 			return $this->db->get()
 				->result();
 		}

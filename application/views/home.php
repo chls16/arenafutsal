@@ -87,43 +87,22 @@
 								<li class="active"><a>JADWAL LAPANGAN</a></li>
 							</ul>
 						</div>
-						<div class="box-body" style="overflow-x:auto;">
+						<div class="box-body" style="overflow-x:auto; overflow-y: auto;">
 							<table id="example1" class="table table-bordered ">
 								<thead>
 									<tr>
-										<th>Hari/Tanggal</th>
-										<?php 
-										for ($x = 8; $x <=24; $x++){ 
-											if($x < 10): { ?>
-										<th><?php echo '0'.$x;?>.00</th>
-										<?php
-											}else: {?>
-										<th><?php echo $x;?>.00</th>
-										<?php 
-											}endif;
-										} ?>
+										<th>Tanggal</th>
+										<th>Lapangan</th>
+										<th>Jam</th>
+										<th>Nama</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php foreach($jadwal as $data){ ?>
 									<tr>
-										<th><?php echo $tanggal. '<br>'; ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
-										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->tanggal ?></th>
+										<th><?php echo $data->lapangan ?></th>
+										<th><?php echo $data->jam ?></th>
 										<th><?php echo $data->nama ?></th>
 									</tr>
 								<?php } ?>
