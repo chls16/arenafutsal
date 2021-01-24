@@ -23,10 +23,15 @@ class Home extends CI_Controller {
 	{
 		$user=$this->m_account->getuser($this->session->userdata('id'));
 		$lapangan=$this->m_account->lapangan();
+		$tanggal = tanggal_indonesia_lengkap(date('Y-m-d'));
+		$jadwal = $this->m_account->jadwal_lapangan($jam);
+		$jam = array('08.00','09.00','10.00','11.00','12.00','13.00','14.00','15.00','16.00','17.00','18.00','19.00','20.00','21.00','22.00','23.00');
 		$data = array(
 			'user' => $user,
 			'panelbody' => 'home',
 			'lapangan' => $lapangan,
+			'tanggal' => $tanggal,
+			'jadwal' =>$jadwal,
 		);
 		$this->load->view('panelbody',$data);
 	}

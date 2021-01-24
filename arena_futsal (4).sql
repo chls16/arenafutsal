@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jan 2021 pada 17.08
+-- Waktu pembuatan: 24 Jan 2021 pada 07.48
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.33
 
@@ -120,19 +120,21 @@ INSERT INTO `harga` (`id`, `id_lapangan`, `jam`, `harga`) VALUES
 
 CREATE TABLE `jadwal` (
   `id_jadwal` int(12) NOT NULL,
-  `hari` varchar(12) NOT NULL,
+  `tanggal` varchar(12) NOT NULL,
   `jam` varchar(5) NOT NULL,
-  `harga` varchar(12) NOT NULL
+  `durasi` int(11) NOT NULL,
+  `lapangan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `jadwal`
 --
 
-INSERT INTO `jadwal` (`id_jadwal`, `hari`, `jam`, `harga`) VALUES
-(1, '2021-01-27', '08:00', ''),
-(2, '2021-01-27', '08:00', ''),
-(3, '2021-01-27', '08:00', '');
+INSERT INTO `jadwal` (`id_jadwal`, `tanggal`, `jam`, `durasi`, `lapangan`) VALUES
+(1, '2021-01-27', '08:00', 1, 'Sintetis 2'),
+(2, '2021-01-27', '08:00', 0, '0'),
+(3, '2021-01-27', '08:00', 0, '0'),
+(4, '2021-01-24', '11:00', 0, 'Sintetis 1');
 
 -- --------------------------------------------------------
 
@@ -198,10 +200,12 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `id_users`, `tgl_booking`, `id_lapangan`, `jam_booking`, `durasi`, `total_transaksi`, `bukti_tf`, `status_bayar`) VALUES
 (1, '2021-01-23 01:15:38', 2, '2021-01-27', 1, '08:00:00', 1, '75000', 'tf.jpg', 'Sudah Bayar'),
-(39, '2021-01-23 15:49:50', 2, '2021-01-23', 2, '18:00:00', 2, '170000', '', 'Belum Bayar'),
-(40, '2021-01-23 15:52:29', 2, '2021-01-23', 1, '23:00:00', 2, '170000', '', 'Belum Bayar'),
-(41, '2021-01-23 15:59:18', 2, '0000-00-00', 1, '22:00:00', 1, '85000', '', 'Belum Bayar'),
-(42, '2021-01-23 16:02:31', 2, '2021-01-24', 1, '09:00:00', 1, '60000', '', 'Belum Bayar');
+(39, '2021-01-23 15:49:50', 2, '2021-01-23', 2, '18:00:00', 2, '170000', '', 'Sudah Bayar'),
+(40, '2021-01-23 15:52:29', 2, '2021-01-23', 1, '23:00:00', 2, '170000', '', 'Sudah Bayar'),
+(41, '2021-01-23 15:59:18', 2, '0000-00-00', 1, '22:00:00', 1, '85000', '', 'Sudah Bayar'),
+(42, '2021-01-23 16:02:31', 2, '2021-01-24', 1, '09:00:00', 1, '60000', '', 'Sudah Bayar'),
+(43, '2021-01-24 03:07:21', 16, '2021-01-25', 1, '08:00:00', 1, '60000', '', 'Sudah Bayar'),
+(44, '2021-01-24 04:14:23', 16, '2021-01-24', 1, '11:00:00', 1, '60000', '', 'Sudah Bayar');
 
 -- --------------------------------------------------------
 
@@ -230,7 +234,8 @@ INSERT INTO `users` (`id`, `nama`, `email`, `username`, `telepon`, `password`, `
 (4, 'zainal', 'zainzain@gmail.com', 'zain', '089765675646', '81dc9bdb52d04dc20036dbd8313ed055', 0),
 (5, '', '', 'a', 'a', '$2y$10$kptxKc6gilkRIkaRd0ZenOLdoHQDJkq766vHJ.oL0Ny9aOEWzSMGu', 0),
 (14, 'Revaldi', 'revaldi@gmail.com', 'reval01', '0823101920', '$2y$10$TsZ190S1AWz7fANnkW8to.FTSJ81xM50JiNYdv6A3PixSM6oNVNtm', 0),
-(15, 'Diana Maulidia', 'diana@gmail.com', 'Diana', '098765', '$2y$10$CUlOBuEMkk1sgSUUYUAZzeiPerzJE.BiG3CmfhKGRtrdKJ2J3FRPi', 0);
+(15, 'Diana Maulidia', 'diana@gmail.com', 'Diana', '098765', '$2y$10$CUlOBuEMkk1sgSUUYUAZzeiPerzJE.BiG3CmfhKGRtrdKJ2J3FRPi', 0),
+(16, 'Zainal Abidin', 'zainalabidin170197@gmail.com', 'Zainahmad', '082301209247', '81dc9bdb52d04dc20036dbd8313ed055', 0);
 
 --
 -- Indexes for dumped tables
@@ -288,7 +293,7 @@ ALTER TABLE `harga`
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_jadwal` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jadwal` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `lapangan`
@@ -306,13 +311,13 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id_transaksi` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

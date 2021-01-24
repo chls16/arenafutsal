@@ -80,33 +80,53 @@
 				<div class="search-box-wrapper style2">
 					<div class="search-box">
 						<ul class="search-tabs clearfix">
-							<li class="active"><a  data-toggle="tab"><i class="soap-icon-calendar-check"></i><span>DAFTAR LAPANGAN</span></a></li>
+							<li class="active"><a  data-toggle="tab"><i class="soap-icon-calendar-check"></i><span>JADWAL LAPANGAN</span></a></li>
 						</ul>
 						<div class="visible-mobile">
 							<ul id="mobile-search-tabs" class="search-tabs clearfix">
 								<li class="active"><a>JADWAL LAPANGAN</a></li>
 							</ul>
 						</div>
-						<div class="box-body">
+						<div class="box-body" style="overflow-x:auto;">
 							<table id="example1" class="table table-bordered ">
 								<thead>
-									<tr >
-										<th style="text-align: center;" width="10px">No</th>
-										<th style="text-align: center;" width="100px">Nama Lapangan</th>
-										<th style="text-align: center;" width="75px">Harga siang</th>
-										<th style="text-align: center;" width="75px">Harga Malam</th>										
+									<tr>
+										<th>Hari/Tanggal</th>
+										<?php 
+										for ($x = 8; $x < 24; $x++){ 
+											if($x < 10): { ?>
+										<th><?php echo '0'.$x;?>.00</th>
+										<?php
+											}else: {?>
+										<th><?php echo $x;?>.00</th>
+										<?php 
+											}endif;
+										} ?>
 									</tr>
 								</thead>
 								<tbody>
-									<?php $no = 1; ?>
-									<?php foreach ($lapangan as $data){?>
-										<tr>
-											<td style="text-align: center;" ><?php  echo $no++; ?></td>
-											<td style="text-align: center;"><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="300px" height="200px">  <?php echo $data->lapangan ?></td>
-											<td style="text-align: center;"><?php echo $data->harga_siang ?></td>
-											<td style="text-align: center;"><?php echo $data->harga_malam ?></td>							
-										</tr>
-									<?php } ?>
+									<?php foreach($jadwal as $data){ ?>
+									<tr>
+										<th><?php echo $tanggal. '<br>'; ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+										<th><?php echo $data->nama ?></th>
+									</tr>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>

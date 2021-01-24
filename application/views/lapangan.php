@@ -46,11 +46,11 @@
         <div class="page-title-container">
             <div class="container">
                 <div class="page-title pull-left">
-                    <h2 class="entry-title">Jadwal Lapangan</h2>
+                    <h2 class="entry-title">Lapangan</h2>
                 </div>
                 <ul class="breadcrumbs pull-right">
                     <li><a href="<?php echo base_url(); ?>">HOME</a></li>
-                    <li class="active">JADWAL LAPANGAN</li>
+                    <li class="active">LAPANGAN</li>
                 </ul>
             </div>
         </div>
@@ -69,40 +69,24 @@
 							<div class="box-body" style="overflow-x:auto;">
 								<table id="example1" class="table table-bordered table-striped">
 									<thead>
-										<tr>
-											<th>Hari/Tanggal</th>
-											<?php 
-											for ($x = 8; $x <=24; $x++){ 
-												if($x < 10): { ?>
-											<th><?php echo '0'.$x;?>.00</th>
-											<?php
-												}else: {?>
-											<th><?php echo $x;?>.00</th>
-											<?php 
-												}endif;
-											} ?>
-										</tr>
-									</thead>
-									<tbody>
-										<th><?php echo $tanggal. '<br>'; ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-										<th><?php ?></th>
-									</tbody>
+                                    <tr >
+                                        <th style="text-align: center;" width="10px">No</th>
+                                        <th style="text-align: center;" width="100px">Nama Lapangan</th>
+                                        <th style="text-align: center;" width="75px">Harga siang</th>
+                                        <th style="text-align: center;" width="75px">Harga Malam</th>                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($lapangan as $data){?>
+                                        <tr>
+                                            <td style="text-align: center;" ><?php  echo $no++; ?></td>
+                                            <td style="text-align: center;"><img src="<?php echo base_url(); ?>gudang/images/logo/<?php echo $data->img?>" width="150px" height="100px">  <?php echo $data->lapangan ?></td>
+                                            <td style="text-align: center;"><?php echo $data->harga_siang ?></td>
+                                            <td style="text-align: center;"><?php echo $data->harga_malam ?></td>                           
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
 								</table>
 							</div>
 						</div>
