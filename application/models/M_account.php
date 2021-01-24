@@ -11,11 +11,16 @@
 			}
 		}
 
-		function jadwal_lapangan(){
+		function jadwal_lapangan($jam){
 			$this->db->select('*');
-			$this->db->from('transaksi a');
-			// $this->db->
-			return $this->db->get();
+			$this->db->from('jadwal a');
+			$this->db->join('users b','a.id_user=b.id','left');
+			$this->db->join('lapangan c','a.lapangan=c.id_lapangan','left');
+			$this->db->where('a.lapangan','Sintetis 1');
+			// $this->db->where('a.jam',$jam);
+
+			return $this->db->get()
+				->result();
 		}
 		
 		function daftar($data)
