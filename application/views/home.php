@@ -87,7 +87,7 @@
 								<li class="active"><a>JADWAL LAPANGAN</a></li>
 							</ul>
 						</div>
-						<div class="box-body">
+						<div class="box-body" style="overflow-x:auto;">
 							<table id="example1" class="table table-bordered ">
 								<thead>
 									<tr>
