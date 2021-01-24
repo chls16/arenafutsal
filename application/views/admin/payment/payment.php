@@ -40,6 +40,7 @@
 									<tr>
 										<th>No</th>
 										<th>Kode Booking</th>
+										<th>Nama</th>
 										<th>Lapangan</th>
 										<th>Tanggal Main</th>
 										<th>Jam Main</th>
@@ -53,6 +54,7 @@
 									<tr>
 										<td><?= $no++ ?></td>
 										<td><?= $data->id_transaksi ?></td>
+										<td><?= $data->nama ?></td>
 										<td><?= $data->lapangan ?></td>
 										<td><?php echo date_format(date_create($data->tgl_booking), 'd M Y ');  ?></td>
 										<td><?php echo date_format(date_create($data->jam_booking), 'H:i');  ?></td>
@@ -63,6 +65,7 @@
 											<?php if($data->status_bayar == "Konfirmasi"){ ?>
 											<div class="btn-group">
 											<?php echo form_open(base_url('admin/payment/status/'.$data->id_transaksi)); ?>
+											<input type="hidden" name="nama" class="form-control" value="<?php echo $data->nama ?>">
 											<input type="hidden" name="tgl_booking" class="form-control" value="<?php echo $data->tgl_booking ?>">
 											<input type="hidden" name="jam_booking" class="form-control" value="<?php echo $data->jam_booking ?>">	
 											<input type="hidden" name="durasi" class="form-control" value="<?php echo $data->durasi ?>">		

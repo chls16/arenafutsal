@@ -43,10 +43,12 @@ class Payment extends CI_Controller {
 
 		//add jadal
 		$data = array(	
+						'nama' => $this->input->post('nama'),
 						'tanggal'	=> $this->input->post('tgl_booking'),
 						'jam'	=> $this->input->post('jam_booking'),
 						'durasi'	=> $this->input->post('durasi'),
 						'lapangan' => $this->input->post('lapangan')
+						
 						);
 		$this->m_admin->add_jadwal($data);
 		redirect(base_url('admin/payment'), 'refresh');
