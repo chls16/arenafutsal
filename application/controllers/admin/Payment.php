@@ -52,6 +52,8 @@ class Payment extends CI_Controller {
 		redirect(base_url('admin/payment'), 'refresh');
 	}
 
+	
+
 
 }
 

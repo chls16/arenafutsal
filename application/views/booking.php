@@ -203,7 +203,7 @@
 							
 							<table class="table">
 								<tr>
-									<!--<th>ID</th>
+									<th>ID</th>
 									<th>TANGGAL TRANSAKSI</th>
 									<th>USER</th>
 									<th>tanggal booking</th>
@@ -217,7 +217,11 @@
 									<td><?php echo $data->id_users ?></td>
 									<td><?php echo $data->tgl_booking ?></td>
 									<td><?php echo $data->jam_booking ?></td>
-									<td></td>
+									<td>
+										<?php if($data->status_bayar=='Belum Bayar'){ ?>
+											<a href="<?php echo base_url('booking/pembayaran/'.$data->id_transaksi) ?>" class="btn btn-info btn-sm"><i class="fa fa-upload"></i> Pembayaran</a>
+										<?php } ?>
+									</td>
 								</tr>
 								<?php } ?>
 							</table>
@@ -240,7 +244,7 @@
 		</section>
 
 		<footer id="footer">
-			<?php $this->load->view('common/footer'); ?>-->
+			<?php $this->load->view('common/footer'); ?>
 		</footer>
 	</div>
 
