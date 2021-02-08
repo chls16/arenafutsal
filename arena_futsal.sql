@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2021 at 08:41 PM
+-- Generation Time: Feb 08, 2021 at 03:45 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.26
 
@@ -190,7 +190,8 @@ INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `id_users`, `tgl_booki
 (2, '2021-01-24 19:02:37', 2, '2021-01-28', 1, '17:00:00', 1, '85000', 'logo.jpg', 'Konfirmasi'),
 (3, '2021-01-24 19:04:39', 2, '2021-01-27', 2, '10:00:00', 1, '60000', 'IMG.jpg', 'Konfirmasi'),
 (4, '2021-01-24 19:05:18', 2, '2021-01-30', 4, '12:00:00', 1, '75000', 'baymax_hi1.png', 'Konfirmasi'),
-(5, '2021-01-24 19:10:51', 2, '2021-01-26', 4, '09:00:00', 1, '75000', 'logo1.jpg', 'Sudah Bayar');
+(5, '2021-01-24 19:10:51', 2, '2021-01-26', 4, '09:00:00', 1, '75000', 'logo1.jpg', 'Sudah Bayar'),
+(6, '2021-02-08 11:59:51', 2, '2021-02-10', 1, '09:00:00', 1, '60000', 'baymax_hi2.png', 'Sudah Bayar');
 
 -- --------------------------------------------------------
 
@@ -286,7 +287,7 @@ ALTER TABLE `lapangan`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transaksi` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
